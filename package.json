@@ -1,0 +1,56 @@
+{
+  "name": "monarch-ui",
+  "version": "1.0.0",
+  "description": "Monarch UI",
+  "branch": "develop",
+  "author": "Influence Health",
+  "dependencies": {
+    "async": "~0.2.10",
+    "bluebird": "^2.9.24",
+    "body-parser": "^1.13.3",
+    "input-validation": "git+ssh://git@github.com:medseek-engineering/input-validation.git",
+    "lodash": "^2.4.1",
+    "lodash.bind": "^2.4.1",
+    "lodash.findindex": "^2.4.1",
+    "q": "^1.0.1",
+    "request": "^2.61.0",
+    "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git",
+    "iui-general": "git+ssh://git@github.com:medseek-engineering/iui-general.git",
+    "iui-table": "git+ssh://git@github.com:medseek-engineering/iui-table.git",
+    "iui-alerts": "git+ssh://git@github.com:medseek-engineering/iui-alerts.git",
+    "longitudinal-view": "git+ssh://git@github.com:medseek-engineering/longitudinal-view.git",
+    "wrench": "^1.5.8"
+  },
+  "devDependencies": {
+    "delayed-stream": "0.0.5",
+    "gulp": "^3.9.0",
+    "jshint": "~2.3.0",
+    "jshint-stylish": "~1.0.0",
+    "karma": "~0.12.1",
+    "karma-coverage": "~0.1",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-html-reporter": "~0.1.1",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.2.2",
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "karma-requirejs": "~0.2.0",
+    "karma-spec-reporter": "0.0.6",
+    "minimist": "^1.2.0",
+    "medseek-config": "git+ssh://git@github.com:medseek-engineering/medseek-config.git"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medseek-engineering/monarch-ui.git"
+  },
+  "engines": {
+    "node": ">=0.10.21"
+  },
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start",
+    "jshint": "node node_modules/jshint/bin/jshint -c config/.jshintrc app/modules test/modules app.js",
+    "pack": "node .nuget/buildNugetPackage.js",
+    "karma": "node node_modules/karma/bin/karma",
+    "postinstall": "node minify-fix.js"
+  }
+}
