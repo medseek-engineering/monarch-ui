@@ -1,0 +1,10 @@
+{
+	"/": {
+		"title": "Homepage",
+		"layout": "layouts/default",
+		"theme": "themes/default",
+		"sections": {
+			"main": "modules/home"
+		}
+	}
+}
