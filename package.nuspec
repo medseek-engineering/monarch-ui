@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>influence-health-monarch-ui</id>
+    <version>1.0.0</version>
+    <title>Monarch UI</title>
+    <authors>Influence Health</authors>
+    <description>Monarch UI Web Application</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="app/**" target="" />
+    <file src="resources/**" target="" />
+    <file src="config/**" target="" exclude="*.local.*" />
+    <file src="node_modules/**" target="" />
+    <file src="app.js" target="" />
+    <file src="package.json" target="" />
+    <file src="web.config" target="" />
+    <file src="newrelic.js" target="" />
+  </files>
+</package>
