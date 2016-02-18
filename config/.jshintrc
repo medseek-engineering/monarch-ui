@@ -1,0 +1,32 @@
+{
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "indent": 2,
+    "latedef": true,
+    "node": true,
+    "jquery": true,
+    "browser": true,
+    "quotmark": "single",
+    "strict": true,
+    "trailing": true,
+    "globals": {
+      "app" : true,
+      "angular": true,
+      "describe": true,
+      "it": true,
+      "before": true,
+      "after": true,
+      "beforeEach": true,
+      "afterEach": true,
+      "expect": true,
+      "require": true,
+      "define": true,
+      "inject": true,
+      "spyOn": true,
+      "jasmine": true,
+      "describe": true,
+      "_": true
+    }
+}
