@@ -1,10 +1,18 @@
 {
-	"/": {
-		"title": "Homepage",
-		"layout": "layouts/default",
-		"theme": "themes/default",
-		"sections": {
-			"main": "modules/home"
-		}
-	}
+  "/": {
+    "title": "Home",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/home"
+    }
+  },
+  "/about": {
+    "title": "About",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/about"
+    }
+  }
 }

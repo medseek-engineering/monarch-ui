@@ -1,1 +1,13 @@
-<module path="page.sections.main" />
+<main class="container">
+  <!-- Just building out the modules here -->
+  <ul class="nav nav-tabs main-nav">
+    <li
+      ng-class="{'active': app.currentRoute === routeKey}"
+      role="presentation"
+      ng-repeat="(routeKey, routeValue) in app.routes">
+      <a href="{{routeKey}}">{{routeValue.title}}</a>
+    </li>
+  </ul>
+  <iui-page-header heading-text="{{app.routing.data.title}}"></iui-page-header>
+  <module path="page.sections.main" />
+</main>
