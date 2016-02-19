@@ -5,7 +5,9 @@
     "theme": "themes/default",
     "sections": {
       "main": "modules/home"
-    }
+    },
+    "primaryNav": true,
+    "moduleId": "home"
   },
   "/about": {
     "title": "About",
@@ -13,6 +15,33 @@
     "theme": "themes/default",
     "sections": {
       "main": "modules/about"
-    }
+    },
+    "primaryNav": true,
+    "moduleId": "about"
+  },
+  "/tasks": {
+    "title": "Tasks",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/tasks/task-list"
+    },
+    "primaryNav": true,
+    "moduleId": "tasks"
+  },
+  "/tasks/detail/:taskId": {
+    "title": "Tasks",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/tasks/task-detail"
+    },
+    "breadcrumb": [
+      {"name": "Tasks", "url": "/tasks/"}
+    ],
+    "moduleId": "tasks",
+    "params": [
+      "taskId"
+    ]
   }
 }

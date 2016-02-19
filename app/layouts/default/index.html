@@ -2,12 +2,13 @@
   <!-- Just building out the modules here -->
   <ul class="nav nav-tabs main-nav">
     <li
-      ng-class="{'active': app.currentRoute === routeKey}"
+      ng-class="{'active': app.routing.data.moduleId === routeValue.moduleId}"
       role="presentation"
-      ng-repeat="(routeKey, routeValue) in app.routes">
+      ng-repeat="(routeKey, routeValue) in app.routes"
+      ng-if="routeValue.primaryNav">
       <a href="{{routeKey}}">{{routeValue.title}}</a>
     </li>
   </ul>
-  <iui-page-header heading-text="{{app.routing.data.title}}"></iui-page-header>
+  <iui-page-header heading-text="{{app.routing.data.title}}" breadcrumb="app.routing.data.breadcrumb"></iui-page-header>
   <module path="page.sections.main" />
 </main>
