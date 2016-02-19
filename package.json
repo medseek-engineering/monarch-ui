@@ -53,5 +53,26 @@
   "engines": {
     "node": ">=0.10.21"
   },
+  "gulpSettings": {
+    "base": "./app/",
+    "styleModules": [
+      "iui-general",
+      "iui-table",
+      "longitudinal-view"
+    ],
+    "compass": {
+      "sass": "app/themes/default_sass",
+      "css": "app/themes/default",
+      "require": []
+    },
+    "appFiles": {
+      "styles": ["./app/themes/default_sass/**/*.scss", "./app/themes/default_sass/*.scss"],
+      "htmlFiles": ["./app/**/*.html", "./app/**/*.js"],
+      "jsFiles": ["./app/**/*.js"]
+    },
+    "destination": {
+      "css": "./app/themes/default"
+    }
+  },
   "scripts": {}
 }
