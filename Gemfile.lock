@@ -1,12 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    autoprefixer-rails (6.3.3)
-      execjs
-      json
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap-sass (3.2.0.0)
+      sass (~> 3.2)
     chunky_png (1.3.5)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -20,9 +16,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    execjs (2.6.0)
     ffi (1.9.10)
-    json (1.8.3)
     multi_json (1.11.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
@@ -35,6 +29,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
-  compass
+  bootstrap-sass (~> 3.2.0.0)
+  compass (~> 1.0.0.alpha.20)
   sass-globbing

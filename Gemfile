@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-ruby "2.1.2"
-gem "compass"
+gem "compass", "~>1.0.0.alpha.20"
 gem "sass-globbing"
-gem "bootstrap-sass"
+gem "bootstrap-sass", "~>3.2.0.0"
