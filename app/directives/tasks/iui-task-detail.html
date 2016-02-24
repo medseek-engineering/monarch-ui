@@ -1,4 +1,5 @@
-<dl>
-  <dt ng-repeat-start="(detailKey, detailValue) in taskDetail">{{detailKey}}</dt>
-  <dd ng-repeat-end>{{detailValue}}</dd>
-</dl>
+<iui-key-value
+  list-item-class-name="dl-horizontal dt-as-left-aligned micro-list"
+  display-fields="taskDisplayFields"
+  field-data="taskDetail">
+</iui-key-value>

@@ -7,6 +7,7 @@
   "dependencies": {
     "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git",
     "iui-general": "git+ssh://git@github.com:medseek-engineering/iui-general.git",
+    "iui-lists": "git+ssh://git@github.com:medseek-engineering/iui-lists.git",
     "iui-table": "git+ssh://git@github.com:medseek-engineering/iui-table.git",
     "iui-alerts": "git+ssh://git@github.com:medseek-engineering/iui-alerts.git",
     "longitudinal-view": "git+ssh://git@github.com:medseek-engineering/longitudinal-view.git",
@@ -57,6 +58,7 @@
     "base": "./app/",
     "styleModules": [
       "iui-general",
+      "iui-lists",
       "iui-table",
       "longitudinal-view"
     ],

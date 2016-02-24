@@ -24,9 +24,16 @@
 
   var allLintFiles = packageJson.gulpSettings.appFiles.jsFiles.concat(additionalLintFiles);
 
+
+  var compassStyleModulesWatch = [];
+
   var compassImportPaths = packageJson.gulpSettings.styleModules.map(function(styleModule) {
-    return path.join(path.dirname(require.resolve(styleModule)),'src');
+    var styleModulePath = path.join(path.dirname(require.resolve(styleModule)),'src');
+    compassStyleModulesWatch.push(styleModulePath+'/*.scss');
+    compassStyleModulesWatch.push(styleModulePath+'/**/*.scss');
+    return styleModulePath;
   });
+
 
   gulp.task('lint', function () {
     return gulp.src(allLintFiles, {base: packageJson.gulpSettings.base})
@@ -81,7 +88,7 @@
         port: 4001
     });
     gulp.watch(allLintFiles, ['lint']);
-    gulp.watch(packageJson.gulpSettings.appFiles.styles, ['compileStyle']);
+    gulp.watch(packageJson.gulpSettings.appFiles.styles.concat(compassStyleModulesWatch), ['compileStyle']);
     gulp.watch(packageJson.gulpSettings.appFiles.htmlFiles).on('change', browserSync.reload);
   });
 

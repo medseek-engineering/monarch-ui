@@ -25,6 +25,27 @@
         app.routing.data.title = $scope.taskDetail.name;
       }
     }
+
+    $scope.taskDisplayFields = [
+      {
+        displayName: 'Name',
+        field: 'name'
+      },
+      {
+        displayName: 'Due',
+        field: 'due',
+        valueTemplateUrl: '/directives/tasks/task-value-template.html'
+      },
+      {
+        displayName: 'Status',
+        field: 'status'
+      },
+      {
+        displayName: 'Assigned',
+        field: 'assigned'
+      },
+
+    ];
   }
 
 })(window.app);

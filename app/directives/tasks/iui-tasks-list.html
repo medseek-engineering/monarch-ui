@@ -1,6 +1,13 @@
-<ul>
-  <li ng-repeat="task in tasks.list">
-    <a href="/tasks/detail/{{task.id}}">{{task.name}}</a>
-  </li>
-</ul>
+<iui-list>
+  <iui-list-item ng-repeat="task in tasks.list track by task.id">
+    <iui-list-item-link ng-href="/tasks/detail/{{task.id}}">
+      <iui-key-value
+        class="row"
+        presentation-role-only="true"
+        display-fields="taskDisplayFields"
+        field-data="task">
+      </iui-key-value>
+    </iui-list-item-link>
+  </iui-list-item>
+</iui-list>
 

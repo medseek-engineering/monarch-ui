@@ -16,6 +16,20 @@
 
   function TasksListController($scope, tasks) {
     $scope.tasks = tasks;
+    $scope.taskDisplayFields = [
+      {
+        displayName: 'Name',
+        field: 'name',
+        className: 'col-xs-6',
+        hideFieldName: true
+      },
+      {
+        displayName: 'Due',
+        field: 'due',
+        className: 'col-xs-6 clearfix',
+        valueTemplateUrl: '/directives/tasks/task-value-template.html'
+      }
+    ];
   }
 
 })(window.app);
