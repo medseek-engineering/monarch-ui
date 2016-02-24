@@ -26,11 +26,14 @@
 
 
   var compassStyleModulesWatch = [];
+  var iuiModuleJSWatch = [];
 
   var compassImportPaths = packageJson.gulpSettings.styleModules.map(function(styleModule) {
     var styleModulePath = path.join(path.dirname(require.resolve(styleModule)),'src');
+    var jsModulePath = path.join(path.dirname(require.resolve(styleModule)),'dist');
     compassStyleModulesWatch.push(styleModulePath+'/*.scss');
     compassStyleModulesWatch.push(styleModulePath+'/**/*.scss');
+    iuiModuleJSWatch.push(jsModulePath+'/*.min.js');
     return styleModulePath;
   });
 
@@ -89,6 +92,7 @@
     });
     gulp.watch(allLintFiles, ['lint']);
     gulp.watch(packageJson.gulpSettings.appFiles.styles.concat(compassStyleModulesWatch), ['compileStyle']);
+    gulp.watch(packageJson.gulpSettings.appFiles.jsFiles.concat(iuiModuleJSWatch)).on('change', browserSync.reload);
     gulp.watch(packageJson.gulpSettings.appFiles.htmlFiles).on('change', browserSync.reload);
   });
 
