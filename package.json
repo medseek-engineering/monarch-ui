@@ -5,12 +5,12 @@
   "description": "monarch-ui",
   "author": "Influence Health",
   "dependencies": {
-    "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git",
-    "iui-general": "git+ssh://git@github.com:medseek-engineering/iui-general.git",
+    "ui-core": "^1.0.0",
+    "iui-general": "^1.0.0",
     "iui-lists": "^1.0.0",
-    "iui-table": "git+ssh://git@github.com:medseek-engineering/iui-table.git",
-    "iui-alerts": "git+ssh://git@github.com:medseek-engineering/iui-alerts.git",
-    "longitudinal-view": "git+ssh://git@github.com:medseek-engineering/longitudinal-view.git",
+    "iui-table": "^1.0.0",
+    "iui-alerts": "^1.0.0",
+    "longitudinal-view": "^1.0.0",
     "lodash": "~2.4.1",
     "d3": "^3.5.14"
   },
