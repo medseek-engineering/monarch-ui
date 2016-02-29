@@ -76,5 +76,7 @@
       "css": "./app/themes/default"
     }
   },
-  "scripts": {}
+  "scripts": {
+    "start": "node app.js"
+  }
 }
