@@ -19,6 +19,16 @@
     "primaryNav": true,
     "moduleId": "about"
   },
+  "/goals": {
+    "title": "Goals",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/goals"
+    },
+    "primaryNav": true,
+    "moduleId": "goals"
+  },
   "/tasks": {
     "title": "Tasks",
     "layout": "layouts/default",
