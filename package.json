@@ -5,6 +5,7 @@
   "description": "monarch-ui",
   "author": "Influence Health",
   "dependencies": {
+    "browser-sync": "^2.8.2",
     "ui-core": "^1.0.0",
     "iui-general": "^1.0.0",
     "iui-lists": "^1.0.0",
@@ -43,7 +44,6 @@
     "karma-spec-reporter": "0.0.6"
   },
   "devDependencies": {
-    "browser-sync": "^2.8.2",
     "medseek-config": "^0.0.1"
   },
   "main": "app.js",
