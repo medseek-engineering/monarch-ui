@@ -13,7 +13,7 @@ module.exports = function (config) {
 
     logLevel: config.LOG_INFO,
 
-    browsers: ['Firefox'],
+    browsers: ['PhantomJS'],
 
     captureTimeout: 60000,
 
@@ -25,7 +25,7 @@ module.exports = function (config) {
 
     plugins: [
       'karma-jasmine',
-      //'karma-phantomjs-launcher',
+      'karma-phantomjs-launcher',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-coverage',

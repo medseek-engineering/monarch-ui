@@ -41,7 +41,9 @@
     "karma-jasmine": "~0.2.2",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-requirejs": "~0.2.0",
-    "karma-spec-reporter": "0.0.6"
+    "karma-spec-reporter": "0.0.6",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.4"
   },
   "devDependencies": {
     "medseek-config": "^0.0.1"
@@ -68,9 +70,17 @@
       "require": []
     },
     "appFiles": {
-      "styles": ["./app/themes/default_sass/**/*.scss", "./app/themes/default_sass/*.scss"],
-      "htmlFiles": ["./app/**/*.html", "./app/**/*.js"],
-      "jsFiles": ["./app/**/*.js"]
+      "styles": [
+        "./app/themes/default_sass/**/*.scss",
+        "./app/themes/default_sass/*.scss"
+      ],
+      "htmlFiles": [
+        "./app/**/*.html",
+        "./app/**/*.js"
+      ],
+      "jsFiles": [
+        "./app/**/*.js"
+      ]
     },
     "destination": {
       "css": "./app/themes/default"
@@ -78,6 +88,6 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "gulp compileStyle"
+    "postinstall": "gulp build"
   }
 }
