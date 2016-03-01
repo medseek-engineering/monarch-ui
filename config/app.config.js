@@ -22,5 +22,10 @@ module.exports = {
   },
   server: {
     port: process.env.PORT || 4000
+  },
+  newrelic: {
+    appName: 'Monarch UI',
+    licensekey: process.env.NEWRELICLICENSEKEY,
+    logFilePath: './nr.log'
   }
 };
