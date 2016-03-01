@@ -20,13 +20,13 @@
       {
         displayName: 'Name',
         field: 'name',
-        className: 'col-xs-6',
+        className: 'list-item-title',
         hideFieldName: true
       },
       {
         displayName: 'Due',
         field: 'due',
-        className: 'col-xs-6 clearfix',
+        className: 'list-item-text',
         valueTemplateUrl: '/directives/tasks/task-value-template.html'
       }
     ];
