@@ -15,17 +15,29 @@
     return directive;
   }
 
-  TasksDetailController.$inject = ['$scope', 'tasks'];
+  TasksDetailController.$inject = ['$scope', 'tasks', '$location'];
 
-  function TasksDetailController($scope, tasks) {
+  function TasksDetailController($scope, tasks, $location) {
     var taskId = parseInt($scope.taskId);
+    $scope.tasks = tasks;
+    $scope.delete = deleteTask;
+    $scope.task;
+
+
     if (taskId) {
-      $scope.taskDetail = _.findWhere(tasks.list, {id: taskId });
-      if ($scope.taskDetail) {
-        app.routing.data.title = $scope.taskDetail.name;
+      $scope.task = _.findWhere(tasks.list, {id: taskId });
+      if ($scope.task) {
+        app.routing.data.title = $scope.task.name;
       }
     }
-    $scope.tasks = tasks;
+
+    function deleteTask() {
+      var index = tasks.list.indexOf($scope.task);
+      if (index > -1) {
+        tasks.list.splice(index, 1);
+        $location.path('/tasks/');
+      }
+    };
   }
 
 })(window.app);
