@@ -10,3 +10,16 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.list-item-title, .list-item-text {
+  float: left;
+}
+
+.list-item-title {
+  width: calc(100% - 140px - 10px);
+}
+
+.list-item-text {
+  padding-left: 10px;
+  width: 140px;
+}
