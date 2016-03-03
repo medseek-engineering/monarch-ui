@@ -21,8 +21,6 @@
     var taskId = parseInt($scope.taskId);
     $scope.tasks = tasks;
     $scope.delete = deleteTask;
-    $scope.task;
-
 
     if (taskId) {
       $scope.task = _.findWhere(tasks.list, {id: taskId });
@@ -37,7 +35,7 @@
         tasks.list.splice(index, 1);
         $location.path('/tasks/');
       }
-    };
+    }
   }
 
 })(window.app);
