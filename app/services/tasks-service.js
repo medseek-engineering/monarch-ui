@@ -1,6 +1,25 @@
 (function (app) {
   'use strict';
   app.value('tasks', {
+    fields: [
+      {
+        displayName: 'Name',
+        field: 'name'
+      },
+      {
+        displayName: 'Due',
+        field: 'due',
+        valueTemplateUrl: '/directives/tasks/task-value-template.html'
+      },
+      {
+        displayName: 'Status',
+        field: 'status'
+      },
+      {
+        displayName: 'Assigned',
+        field: 'assigned'
+      }
+    ],
     list: [
       {
         name: 'Task 1',

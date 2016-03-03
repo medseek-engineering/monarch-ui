@@ -39,12 +39,39 @@
     "primaryNav": true,
     "moduleId": "tasks"
   },
+  "/tasks/add": {
+    "title": "Add Task",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/tasks/task-add"
+    },
+    "breadcrumb": [
+      {"name": "Tasks", "url": "/tasks/"}
+    ],
+    "moduleId": "tasks"
+  },
   "/tasks/detail/:taskId": {
     "title": "Tasks",
     "layout": "layouts/default",
     "theme": "themes/default",
     "sections": {
       "main": "modules/tasks/task-detail"
+    },
+    "breadcrumb": [
+      {"name": "Tasks", "url": "/tasks/"}
+    ],
+    "moduleId": "tasks",
+    "params": [
+      "taskId"
+    ]
+  },
+  "/tasks/detail/:taskId/edit": {
+    "title": "Edit",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/tasks/task-add"
     },
     "breadcrumb": [
       {"name": "Tasks", "url": "/tasks/"}
