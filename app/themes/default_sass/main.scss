@@ -2,6 +2,11 @@
 @import "_table";
 @import "_lists";
 
+.main-nav {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .container-fluid {
   max-width: 1000px;
 }
@@ -15,11 +20,32 @@
   float: left;
 }
 
+$listDateSpacing: 10px;
+$listDateValueWidth: 90px;
+$listDateFieldWidth: 90px;
+
+$totalListDateWidth: $listDateSpacing + $listDateFieldWidth + $listDateSpacing + $listDateValueWidth;
+
 .list-item-title {
-  width: calc(100% - 140px - 10px);
+  width: calc(100% - #{$totalListDateWidth});
 }
 
+
 .list-item-text {
-  padding-left: 10px;
-  width: 140px;
+  padding-left: $listDateSpacing;
+  width: ($totalListDateWidth - $listDateSpacing);
+  > .key-value-field,
+  > .key-value-value {
+    float: left;
+    display: block;
+    text-align: right;
+  }
+  > .key-value-field {
+    padding-right: $listDateSpacing;
+    width: $listDateFieldWidth;
+    
+  }
+  > .key-value-value {
+    width: $listDateValueWidth;
+  }
 }

@@ -34,7 +34,7 @@
       {
         displayName: 'Due',
         field: 'due',
-        valueTemplateUrl: '/directives/tasks/task-value-template.html'
+        valueTemplateUrl: '/templates/key-value-date.html'
       },
       {
         displayName: 'Status',
