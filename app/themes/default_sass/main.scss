@@ -2,19 +2,21 @@
 @import "_table";
 @import "_lists";
 
-.main-nav {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
 .container-fluid {
   max-width: 1000px;
 }
 
 .main-nav {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px -15px;
 }
+
+.page-actions {
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+
+// Link list
 
 .list-item-title, .list-item-text {
   float: left;
@@ -29,7 +31,6 @@ $totalListDateWidth: $listDateSpacing + $listDateFieldWidth + $listDateSpacing +
 .list-item-title {
   width: calc(100% - #{$totalListDateWidth});
 }
-
 
 .list-item-text {
   padding-left: $listDateSpacing;
@@ -48,11 +49,4 @@ $totalListDateWidth: $listDateSpacing + $listDateFieldWidth + $listDateSpacing +
   > .key-value-value {
     width: $listDateValueWidth;
   }
-  padding-left: 10px;
-  width: 140px;
-}
-
-.page-actions {
-  padding-bottom: 10px;
-  text-align: right;
 }
