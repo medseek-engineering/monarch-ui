@@ -27,7 +27,7 @@
         displayName: 'Due',
         field: 'due',
         className: 'list-item-text',
-        valueTemplateUrl: '/directives/tasks/task-value-template.html'
+        valueTemplateUrl: '/templates/key-value-date.html'
       }
     ];
   }
