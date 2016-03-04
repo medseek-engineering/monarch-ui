@@ -1,0 +1,34 @@
+<form ng-submit="searchTasks(query)">
+  <div class="form-group">
+    <label for="field_name">Name</label>
+    <input id="field_name" type="text" class="form-control" ng-model="query.name">
+  </div>
+  <section class="panel panel-default">
+    <div class="panel-body">
+      <h2 class="panel-title">Due</h2>
+      <div class="row">
+        <div class="col-sm-6">
+           <div class="form-group">
+            <label for="field_dueFrom">From</label>
+            <input id="field_dueFrom" type="date" class="form-control" ng-model="query.dueFrom">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="field_dueTo">To</label>
+            <input id="field_dueTo" type="date" class="form-control" ng-model="query.dueTo">
+          </div>
+        </div>
+      </div>
+    </div>    
+  </section>
+  <div class="form-group">
+    <label for="field_status">Status</label>
+    <input id="field_status" type="text" class="form-control" ng-model="query.status">
+  </div>
+  <div class="form-group">
+    <label for="field_assigned">Assigned</label>
+    <input id="field_assigned" type="text" class="form-control" ng-model="query.assigned">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>

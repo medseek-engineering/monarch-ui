@@ -51,6 +51,18 @@
     ],
     "moduleId": "tasks"
   },
+  "/tasks/search": {
+    "title": "Search Tasks",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/tasks/task-filter"
+    },
+    "breadcrumb": [
+      {"name": "Tasks", "url": "/tasks/"}
+    ],
+    "moduleId": "tasks"
+  },
   "/tasks/detail/:taskId": {
     "title": "Tasks",
     "layout": "layouts/default",

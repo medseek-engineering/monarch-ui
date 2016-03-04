@@ -1,16 +1,20 @@
 <div class="form-group">
+  <label for="field_taskType">Task Type</label>
+  <select
+    ng-model="task.TaskTypeName"
+    id="field_taskType"
+    class="form-control"
+    ng-options="taskType for taskType in tasks.types">
+    <option value="">Select</option>
+  </select>
+</div>
+<div class="form-group">
   <label for="field_name">Name</label>
-  <input id="field_name" type="text" class="form-control" ng-model="task.name">
+  <input id="field_name" type="text" class="form-control" ng-model="task.Name">
 </div>
 <div class="form-group">
   <label for="field_due">Due</label>
-  <input id="field_due" type="date" class="form-control" ng-model="task.due">
+  <input id="field_due" type="date" class="form-control" ng-model="task.DueDate">
 </div>
-<div class="form-group">
-  <label for="field_status">Status</label>
-  <input id="field_status" type="text" class="form-control" ng-model="task.status">
-</div>
-<div class="form-group">
-  <label for="field_assigned">Assigned</label>
-  <input id="field_assigned" type="text" class="form-control" ng-model="task.assigned">
-</div>
+
+<pre>{{task | json}}</pre>

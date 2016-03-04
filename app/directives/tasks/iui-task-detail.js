@@ -23,9 +23,9 @@
     $scope.delete = deleteTask;
 
     if (taskId) {
-      $scope.task = _.findWhere(tasks.list, {id: taskId });
+      $scope.task = _.findWhere(tasks.list, {TaskSpecificId: taskId });
       if ($scope.task) {
-        app.routing.data.title = $scope.task.name;
+        app.routing.data.title = $scope.task.TaskTypeName;
       }
     }
 

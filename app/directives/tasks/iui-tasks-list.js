@@ -19,13 +19,14 @@
     $scope.taskDisplayFields = [
       {
         displayName: 'Name',
-        field: 'name',
+        field: 'TaskTypeName',
         className: 'list-item-title',
+        valueTemplateUrl: '/templates/task-name-template.html',
         hideFieldName: true
       },
       {
         displayName: 'Due',
-        field: 'due',
+        field: 'DateDue',
         className: 'list-item-text',
         valueTemplateUrl: '/directives/tasks/task-value-template.html'
       }
