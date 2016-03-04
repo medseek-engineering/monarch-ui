@@ -7,24 +7,53 @@
 }
 
 .main-nav {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.list-item-title, .list-item-text {
-  float: left;
-}
-
-.list-item-title {
-  width: calc(100% - 140px - 10px);
-}
-
-.list-item-text {
-  padding-left: 10px;
-  width: 140px;
+  margin: 20px -15px;
 }
 
 .page-actions {
   padding-bottom: 10px;
   text-align: right;
+}
+
+.page-subheader {
+  color: $sg_light_grey;
+  font-size: $base-font-size;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+// Link list
+
+.list-item-title, .list-item-text {
+  float: left;
+}
+
+$listDateSpacing: 10px;
+$listDateValueWidth: 90px;
+$listDateFieldWidth: 90px;
+
+$totalListDateWidth: $listDateSpacing + $listDateFieldWidth + $listDateSpacing + $listDateValueWidth;
+
+.list-item-title {
+  width: calc(100% - #{$totalListDateWidth});
+}
+
+.list-item-text {
+  padding-left: $listDateSpacing;
+  width: ($totalListDateWidth - $listDateSpacing);
+  > .key-value-field,
+  > .key-value-value {
+    float: left;
+    display: block;
+    text-align: right;
+  }
+  > .key-value-field {
+    padding-right: $listDateSpacing;
+    width: $listDateFieldWidth;
+    
+  }
+  > .key-value-value {
+    width: $listDateValueWidth;
+  }
 }

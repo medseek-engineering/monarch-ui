@@ -24,10 +24,25 @@
     "layout": "layouts/default",
     "theme": "themes/default",
     "sections": {
-      "main": "modules/goals"
+      "main": "modules/goals/goals-list"
     },
     "primaryNav": true,
     "moduleId": "goals"
+  },
+  "/goals/detail/:goalId": {
+    "title": "Goals",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/goals/goal-detail"
+    },
+    "breadcrumb": [
+      {"name": "Goals", "url": "/goals/"}
+    ],
+    "moduleId": "goals",
+    "params": [
+      "goalId"
+    ]
   },
   "/tasks": {
     "title": "Tasks",
