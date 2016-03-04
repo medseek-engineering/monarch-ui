@@ -1,6 +1,17 @@
 (function (app) {
   'use strict';
   app.value('tasks', {
+    query: {
+      statuses: {},
+      types: {} 
+    },
+    statuses: [
+      'Past Due',
+      'Today\'s',
+      'Future',
+      'Waiting for Claims',
+      'Missed Opportunity'
+    ],
     types: [
       'Education Material',
       'Goal',
@@ -8,23 +19,41 @@
       'Other Tasks',
       'Assessment'
     ],
-    fields: [
-      {
-        displayName: 'Task Type',
-        field: 'TaskTypeName',
-        valueTemplateUrl: '/templates/task-name-template.html'
-      },
-      {
-        displayName: 'Due',
-        field: 'DateDue',
-        valueTemplateUrl: '/directives/tasks/task-value-template.html'
-      },
-      {
-        displayName: 'Completed Date',
-        field: 'CompletedDate',
-        valueTemplateUrl: '/directives/tasks/task-value-template.html'
-      }
-    ],
+    displayFields: {
+      list: [
+        {
+          displayName: 'Name',
+          field: 'TaskTypeName',
+          className: 'list-item-title',
+          valueTemplateUrl: '/templates/task-name-template.html',
+          hideFieldName: true
+        },
+        {
+          displayName: 'Due',
+          field: 'DateDue',
+          className: 'list-item-text',
+          valueTemplateUrl: '/templates/task-list-date-value.html',
+          fieldTemplateUrl: '/templates/task-list-date-key.html'
+        }
+      ],
+      detail: [
+        {
+          displayName: 'Task Type',
+          field: 'TaskTypeName',
+          valueTemplateUrl: '/templates/task-name-template.html'
+        },
+        {
+          displayName: 'Due',
+          field: 'DateDue',
+          valueTemplateUrl: '/templates/key-value-date.html'
+        },
+        {
+          displayName: 'Completed Date',
+          field: 'CompletedDate',
+          valueTemplateUrl: '/templates/key-value-date.html'
+        }
+      ]
+    },
     list: [
       {
         'Id': 0,
@@ -32,9 +61,9 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Education Material',
-        'DateDue': '2016-02-01T07:53:39.777',
+        'DateDue': '2016-02-01',
         'Name': 'Low Salt Diet',
-        'CompletedDate': '2016-02-29T21:31:39.14',
+        'CompletedDate': null,
         'IsWaitingForClaims': false,
         'ManagedPopulationId': 0,
         'TaskSpecificId': 44496,
@@ -60,7 +89,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Goal',
-        'DateDue': '2016-02-04T00:00:00',
+        'DateDue': '2016-02-04',
         'Name': 'test',
         'CompletedDate': '2016-02-29T00:55:56.487',
         'IsWaitingForClaims': false,
@@ -88,7 +117,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Activity',
-        'DateDue': '2016-02-12T00:00:00',
+        'DateDue': '2016-02-12',
         'Name': 'Coping',
         'CompletedDate': '2016-02-29T00:55:50.39',
         'IsWaitingForClaims': false,
@@ -116,7 +145,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Other Tasks',
-        'DateDue': '2016-02-11T00:00:00',
+        'DateDue': '2016-02-11',
         'Name': null,
         'CompletedDate': '2016-02-25T00:45:47.7',
         'IsWaitingForClaims': false,
@@ -172,7 +201,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Assessment',
-        'DateDue': '2016-02-13T00:00:00',
+        'DateDue': '2016-02-13',
         'Name': 'CHF Initial Assessment',
         'CompletedDate': '2016-02-11T22:56:25.34',
         'IsWaitingForClaims': false,
@@ -200,7 +229,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Assessment',
-        'DateDue': '2016-02-12T00:00:00',
+        'DateDue': '2016-02-12',
         'Name': 'Consent Assessment',
         'CompletedDate': '2016-02-11T22:55:49.91',
         'IsWaitingForClaims': false,
@@ -228,7 +257,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Other Tasks',
-        'DateDue': '2016-02-19T00:00:00',
+        'DateDue': '2016-02-19',
         'Name': null,
         'CompletedDate': '2016-02-11T21:58:55.09',
         'IsWaitingForClaims': false,
@@ -312,7 +341,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Activity',
-        'DateDue': '2016-02-03T00:00:00',
+        'DateDue': '2016-02-03',
         'Name': 'Exercise',
         'CompletedDate': '2016-02-02T22:28:09.377',
         'IsWaitingForClaims': false,
@@ -340,7 +369,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Goal',
-        'DateDue': '2016-02-03T00:00:00',
+        'DateDue': '2016-02-03',
         'Name': 'Test Goal',
         'CompletedDate': '2016-02-02T22:28:09.267',
         'IsWaitingForClaims': false,
@@ -396,7 +425,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Assessment',
-        'DateDue': '2016-02-03T00:00:00',
+        'DateDue': '2016-02-03',
         'Name': '90 Day Risk Reassessment',
         'CompletedDate': '2016-02-02T21:38:12.487',
         'IsWaitingForClaims': false,
@@ -424,7 +453,7 @@
         'PatientId': 0,
         'DaysLate': 0,
         'TaskTypeName': 'Other Tasks',
-        'DateDue': '2016-02-03T00:00:00',
+        'DateDue': '2016-02-03',
         'Name': null,
         'CompletedDate': '2016-02-02T21:35:42.883',
         'IsWaitingForClaims': false,

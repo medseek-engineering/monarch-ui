@@ -16,21 +16,6 @@
 
   function TasksListController($scope, tasks) {
     $scope.tasks = tasks;
-    $scope.taskDisplayFields = [
-      {
-        displayName: 'Name',
-        field: 'TaskTypeName',
-        className: 'list-item-title',
-        valueTemplateUrl: '/templates/task-name-template.html',
-        hideFieldName: true
-      },
-      {
-        displayName: 'Due',
-        field: 'DateDue',
-        className: 'list-item-text',
-        valueTemplateUrl: '/templates/key-value-date.html'
-      }
-    ];
   }
 
 })(window.app);

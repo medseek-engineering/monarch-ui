@@ -19,8 +19,10 @@
 
   function TasksFilterController($scope, tasks, $location) {
 
+    $scope.tasks = tasks;
+
     $scope.searchTasks = function(query) {
-      $location.path('/tasks/detail/'+$scope.task.id);
+      $location.path('/tasks/');
     };
 
   }

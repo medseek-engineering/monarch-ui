@@ -45,8 +45,6 @@
       }
       $location.path('/tasks/detail/'+$scope.task.TaskSpecificId);
     };
-
-    $scope.taskDisplayFields = tasks.fields;
   }
 
 })(window.app);

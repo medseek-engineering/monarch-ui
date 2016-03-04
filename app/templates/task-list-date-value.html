@@ -1,0 +1,6 @@
+<span ng-if="fieldData.CompletedDate">
+  {{ fieldData.CompletedDate | date }} 
+</span>
+<span ng-if="!fieldData.CompletedDate">
+  {{ fieldData[displayField.field] | date }} 
+</span>

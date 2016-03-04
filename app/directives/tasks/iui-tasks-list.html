@@ -1,10 +1,18 @@
-<div class="page-actions">
-  <a href="/tasks/search" class="btn btn-default">Filter</a>
-  <a href="/tasks/add" class="btn btn-default">Add Task</a>
+<div class="row">
+  <div class="col-sm-6">
+    <h2 class="page-subheader">Patient has completed <strong>{{(tasks.list | filter: {CompletedDate:'!!'}).length}}</strong> of <strong>{{tasks.list.length}}</strong> Tasks</h2>
+  </div>
+  <div class="col-sm-6">
+    <div class="page-actions">
+      <a href="/tasks/search" class="btn btn-default">Filter</a>
+      <a href="/tasks/add" class="btn btn-default">Add Task</a>
+    </div>
+  </div>
 </div>
+
 <iui-link-list
   list-data="tasks.list"
-  display-fields="taskDisplayFields"
+  display-fields="tasks.displayFields.list"
   link-prefix="/tasks/detail/"
   link-index-property="TaskSpecificId">
 </iui-link-list>
