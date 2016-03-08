@@ -23,7 +23,7 @@
     var originalTask;
 
     if (taskId) {
-      originalTask = _.findWhere(tasks.list, {id: taskId });
+      originalTask = _.findWhere(tasks.list, {TaskSpecificId: taskId });
       if (originalTask) {
         app.routing.data.title = 'Edit '+originalTask.name;
         editMode = true;
@@ -43,10 +43,8 @@
         $scope.task.id = tasks.list.length + 1;
         tasks.list.push($scope.task);
       }
-      $location.path('/tasks/detail/'+$scope.task.id);
+      $location.path('/tasks/detail/'+$scope.task.TaskSpecificId);
     };
-
-    $scope.taskDisplayFields = tasks.fields;
   }
 
 })(window.app);
