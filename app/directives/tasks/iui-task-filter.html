@@ -1,0 +1,67 @@
+<form ng-submit="searchTasks(tasks.query)">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="field_name">Name</label>
+        <input id="field_name" type="text" class="form-control" ng-model="tasks.query.name">
+      </div>
+    </div>
+    <section class="col-sm-6 form-group">
+      <h2 class="page-subheader">Status</h2>
+      <div class="checkbox" ng-repeat="taskType in tasks.statuses">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="tasks.query.statuses[taskType]" value="">{{taskType}}
+          </label>
+        </div>
+      </div>
+    </section>
+    <section class="col-sm-6 form-group">
+      <h2 class="page-subheader">Types</h2>
+      <div class="checkbox" ng-repeat="taskType in tasks.types">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="tasks.query.types[taskType]" value="">{{taskType}}
+          </label>
+        </div>
+      </div>
+    </section>
+    <section class="col-md-6 form-group">
+      <h2 class="page-subheader">Due</h2>
+      <div class="row">
+        <div class="col-sm-6">
+           <div class="form-group">
+            <label for="field_dueFrom">From</label>
+            <input id="field_dueFrom" type="date" class="form-control" ng-model="tasks.query.due.from">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="field_dueTo">To</label>
+            <input id="field_dueTo" type="date" class="form-control" ng-model="tasks.query.due.to">
+          </div>
+        </div>
+      </div> 
+    </section>
+    <section class="col-md-6 form-group">
+      <h2 class="page-subheader">Completed</h2>
+      <div class="row">
+        <div class="col-sm-6">
+           <div class="form-group">
+            <label for="field_completedFrom">From</label>
+            <input id="field_completedFrom" type="date" class="form-control" ng-model="tasks.query.completed.from">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="field_completedTo">To</label>
+            <input id="field_completedTo" type="date" class="form-control" ng-model="tasks.query.completed.to">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
