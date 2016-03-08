@@ -18,10 +18,10 @@
   TasksFormController.$inject = ['$scope', 'tasks'];
 
   function TasksFormController($scope, tasks) {
-    if ($scope.task && $scope.task.name) {
-      app.routing.data.title = $scope.task.name;
+    if ($scope.task && $scope.task.TaskTypeName) {
+      app.routing.data.title = $scope.task.TaskTypeName;
     }
-    $scope.taskDisplayFields = tasks.fields;
+    $scope.tasks = tasks;
   }
 
 })(window.app);

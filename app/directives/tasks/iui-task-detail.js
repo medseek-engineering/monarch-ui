@@ -21,20 +21,25 @@
     var taskId = parseInt($scope.taskId);
     $scope.tasks = tasks;
     $scope.delete = deleteTask;
+    $scope.complete = completeTask;
 
     if (taskId) {
-      $scope.task = _.findWhere(tasks.list, {id: taskId });
+      $scope.task = _.findWhere(tasks.list, {TaskSpecificId: taskId });
       if ($scope.task) {
-        app.routing.data.title = $scope.task.name;
+        app.routing.data.title = $scope.task.TaskTypeName;
       }
     }
 
-    function deleteTask() {
-      var index = tasks.list.indexOf($scope.task);
+    function deleteTask(task) {
+      var index = tasks.list.indexOf(task);
       if (index > -1) {
         tasks.list.splice(index, 1);
         $location.path('/tasks/');
       }
+    }
+
+    function completeTask(task) {
+      task.CompletedDate = new Date();
     }
   }
 
