@@ -8,7 +8,6 @@
     "browser-sync": "^2.8.2",
     "ui-core": "^1.0.0",
     "iui-general": "^1.0.0",
-    "iui-lists": "^1.0.3",
     "iui-table": "^1.0.0",
     "iui-alerts": "^1.0.0",
     "longitudinal-view": "^1.0.0",
@@ -49,11 +48,10 @@
   "engines": {
     "node": ">=0.10.21"
   },
-  "gulpSettings": {
+  "buildSettings": {
     "base": "./app/",
     "styleModules": [
       "iui-general",
-      "iui-lists",
       "iui-table",
       "longitudinal-view"
     ],
