@@ -3,7 +3,9 @@
   app.value('tasks', {
     query: {
       statuses: {},
-      types: {} 
+      types: {},
+      completed: {},
+      due: {}
     },
     statuses: [
       'Past Due',
@@ -20,6 +22,104 @@
       'Assessment'
     ],
     displayFields: {
+      query: [
+        {
+          displayName: 'Name',
+          field: 'name'
+        },
+        {
+          displayName: 'Statuses',
+          field: 'statuses',
+          hideFieldName: true,
+          displayFields: [
+            {
+              categoryName: 'Status',
+              displayName: 'Past Due',
+              field: 'Past Due',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Status',
+              displayName: 'Today\'s',
+              field: 'Today\'s',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Status',
+              displayName: 'Future',
+              field: 'Future',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Status',
+              displayName: 'Waiting for Claims',
+              field: 'Waiting for Claims',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Status',
+              displayName: 'Missed Opportunity',
+              field: 'Missed Opportunity',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            }
+          ]
+        },
+        {
+          displayName: 'Types',
+          field: 'types',
+          hideFieldName: true,
+          displayFields: [
+            {
+              categoryName: 'Type',
+              displayName: 'Education Material',
+              field: 'Education Material',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Type',
+              displayName: 'Goal',
+              field: 'Goal',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Type',
+              displayName: 'Activity',
+              field: 'Activity',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Type',
+              displayName: 'Other Tasks',
+              field: 'Other Tasks',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            },
+            {
+              categoryName: 'Type',
+              displayName: 'Assessment',
+              field: 'Assessment',
+              templateUrl: '/$iui-lists/iui-brick-list/category-template.html'
+            }
+          ]
+        },
+        {
+          displayName: 'Completed',
+          field: 'completed',
+          templateUrl: '/$iui-lists/iui-brick-list/date-range-template.html',
+          toField: 'to',
+          fromField: 'from',
+          toDisplayName: 'To',
+          fromDisplayName: 'From'
+        },
+        {
+          displayName: 'Due',
+          field: 'due',
+          templateUrl: '/$iui-lists/iui-brick-list/date-range-template.html',
+          toField: 'to',
+          fromField: 'from',
+          toDisplayName: 'To',
+          fromDisplayName: 'From'
+        }
+      ],
       list: [
         {
           displayName: 'Name',
