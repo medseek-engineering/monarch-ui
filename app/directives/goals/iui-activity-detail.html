@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-8">
+    <p>{{activity.description}}</p>
+
+    <!-- if not completed -->
+    <iui-key-value
+      ng-if="!activity.completedDate"
+      list-item-class-name="dl-horizontal dt-as-left-aligned small-list"
+      display-fields="goals.displayFields.activityDetail.active"
+      field-data="activity">
+    </iui-key-value>
+
+    <!-- if completed -->
+    <iui-key-value
+      ng-if="activity.completedDate"
+      list-item-class-name="dl-horizontal dt-as-left-aligned small-list"
+      display-fields="goals.displayFields.activityDetail.complete"
+      field-data="activity">
+    </iui-key-value>
+
+  </div>
+  <div class="col-sm-4 page-actions">
+    <button
+      ng-if="!activity.completedDate"
+      ng-click="complete(activity)" 
+      class="btn btn-default">
+      Complete
+    </button>
+    <a 
+      ng-href="/goals/detail/{{goal.goalId}}/activity/{{activity.activityId}}/edit"
+      class="btn btn-default">
+      Edit
+    </a>
+    <button 
+      class="btn btn-default"
+      ng-click="delete(activity)">
+      Delete
+    </button>
+  </div>
+</div>
+
+<hr>
+<section>
+  <h2 class="page-subheader">Progress</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <iui-stepper
+        ng-model="activity.progressMilestone"
+        min-value="0"
+        max-value="100"
+        increment-by="25"
+        stepper-id="stepper">
+      </iui-stepper>
+    </div>
+    <div class="col-sm-8">
+      <iui-progress-bar
+        class="activity-progress-bar"
+        display-fields="goals.displayFields.progressBar"
+        bar-options="goals.barOptions"
+        bar-data="activity">
+      </iui-progress-bar>
+    </div>
+  </div>
+</section>

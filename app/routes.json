@@ -44,6 +44,22 @@
       "goalId"
     ]
   },
+  "/goals/detail/:goalId/activity/:activityId": {
+    "title": "Activity",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/goals/activity-detail"
+    },
+    "breadcrumb": [
+      {"name": "Goals", "url": "/goals/"}
+    ],
+    "moduleId": "goals",
+    "params": [
+      "goalId",
+      "activityId"
+    ]
+  },
   "/tasks": {
     "title": "Tasks",
     "layout": "layouts/default",

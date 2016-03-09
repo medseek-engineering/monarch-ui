@@ -22,13 +22,13 @@
     './'+packageJson.main
   ];
 
-  var allLintFiles = packageJson.gulpSettings.appFiles.jsFiles.concat(additionalLintFiles);
+  var allLintFiles = packageJson.buildSettings.appFiles.jsFiles.concat(additionalLintFiles);
 
 
   var compassStyleModulesWatch = [];
   var iuiModuleJSWatch = [];
 
-  var compassImportPaths = packageJson.gulpSettings.styleModules.map(function(styleModule) {
+  var compassImportPaths = packageJson.buildSettings.styleModules.map(function(styleModule) {
     var styleModulePath = path.join(path.dirname(require.resolve(styleModule)),'src');
     var jsModulePath = path.join(path.dirname(require.resolve(styleModule)),'dist');
     compassStyleModulesWatch.push(styleModulePath+'/*.scss');
@@ -39,7 +39,7 @@
 
 
   gulp.task('lint', function () {
-    return gulp.src(allLintFiles, {base: packageJson.gulpSettings.base})
+    return gulp.src(allLintFiles, {base: packageJson.buildSettings.base})
       .pipe(jshint('./config/.jshintrc'))
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'));
@@ -53,12 +53,12 @@
   });
 
   gulp.task('compileStyle', function(){
-    gulp.src(packageJson.gulpSettings.appFiles.styles)
+    gulp.src(packageJson.buildSettings.appFiles.styles)
       .pipe(compass({
-        require: ['sass-globbing', 'bootstrap-sass'].concat(packageJson.gulpSettings.compass.require),
+        require: ['sass-globbing', 'bootstrap-sass'].concat(packageJson.buildSettings.compass.require),
         project: __dirname,
-        sass: packageJson.gulpSettings.compass.sass,
-        css: packageJson.gulpSettings.compass.css,
+        sass: packageJson.buildSettings.compass.sass,
+        css: packageJson.buildSettings.compass.css,
         time: true,
         sourcemap: environment === 'development',
         /* jshint ignore:start */
@@ -70,7 +70,7 @@
         this.emit('end');
       })
       .pipe(minifyCSS())
-      .pipe(gulp.dest(packageJson.gulpSettings.destination.css))
+      .pipe(gulp.dest(packageJson.buildSettings.destination.css))
       .pipe(browserSync.stream());
   });
 
@@ -91,9 +91,9 @@
         port: 4001
     });
     gulp.watch(allLintFiles, ['lint']);
-    gulp.watch(packageJson.gulpSettings.appFiles.styles.concat(compassStyleModulesWatch), ['compileStyle']);
-    gulp.watch(packageJson.gulpSettings.appFiles.jsFiles.concat(iuiModuleJSWatch)).on('change', browserSync.reload);
-    gulp.watch(packageJson.gulpSettings.appFiles.htmlFiles).on('change', browserSync.reload);
+    gulp.watch(packageJson.buildSettings.appFiles.styles.concat(compassStyleModulesWatch), ['compileStyle']);
+    gulp.watch(packageJson.buildSettings.appFiles.jsFiles.concat(iuiModuleJSWatch)).on('change', browserSync.reload);
+    gulp.watch(packageJson.buildSettings.appFiles.htmlFiles).on('change', browserSync.reload);
   });
 
   gulp.task('build', ['lint', 'test', 'compileStyle']);

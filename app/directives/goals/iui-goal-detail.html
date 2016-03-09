@@ -1,0 +1,29 @@
+<div class="page-actions">
+  <a 
+    ng-href="/goals/detail/{{goal.goalId}}/edit"
+    class="btn btn-default">
+    Edit
+  </a>
+  <button 
+    class="btn btn-default"
+    ng-click="delete(goal)">
+    Delete
+  </button>
+  <button
+    ng-if="goal.statusCode === 'Active'"
+    ng-click="complete(goal)" 
+    class="btn btn-default">
+    Complete
+  </button>
+</div>
+<section>
+  <h2 class="page-subheader">Activities</h2>
+  <iui-link-list
+    class="list-group-progress-bars"
+    list-data="goal.patientActivities"
+    display-fields="goals.displayFields.activityList"
+    link-prefix="/goals/detail/{{goalId}}/activity/"
+    link-index-property="activityId">
+  </iui-link-list>
+</section>
+

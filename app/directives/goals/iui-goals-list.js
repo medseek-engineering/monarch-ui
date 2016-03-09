@@ -16,36 +16,14 @@
 
   function GoalsListController($scope, goals) {
     $scope.goals = goals;
-    $scope.goalsDisplayFields = {
-      active: [
-        {
-          displayName: 'Name',
-          field: 'goalName',
-          className: 'list-item-title',
-          hideFieldName: true
-        },
-        {
-          displayName: 'Due',
-          field: 'dueDate',
-          className: 'list-item-text',
-          valueTemplateUrl: '/templates/key-value-date.html'
-        }
-      ],
-      complete: [
-        {
-          displayName: 'Name',
-          field: 'goalName',
-          className: 'list-item-title',
-          hideFieldName: true
-        },
-        {
-          displayName: 'Completed',
-          field: 'goalCompletedDate',
-          className: 'list-item-text',
-          valueTemplateUrl: '/templates/key-value-date.html'
-        }
-      ]
-    };
+
+    $scope.goals.active = goals.list.filter(function(goal) {
+      return goal.statusCode === 'Active';
+    });
+
+    $scope.goals.complete = goals.list.filter(function(goal) {
+      return goal.statusCode === 'Completed';
+    });
   }
 
 })(window.app);
