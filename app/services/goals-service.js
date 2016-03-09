@@ -1,7 +1,23 @@
 (function (app) {
   'use strict';
+
+  var progressBarOptions = {
+    maxValue: 100,
+    hideDisplayName: true
+  };
+
+  var progressBarDisplayFields = [
+    {
+      field: 'progressMilestone',
+      className: 'list-item-title',
+      displayName: 'Progress'
+    }
+  ];
+
   app.value('goals', {
+    barOptions: progressBarOptions,
     displayFields: {
+      progressBar: progressBarDisplayFields,
       active: [
         {
           displayName: 'Name',
@@ -29,9 +45,63 @@
           className: 'list-item-text',
           valueTemplateUrl: '/templates/key-value-date.html'
         }
-      ]
+      ],
+      activityList: [
+        {
+          displayName: 'Name',
+          field: 'activityName',
+          className: 'list-item-title',
+          hideFieldName: true
+        },
+        {
+          displayName: 'progress',
+          field: 'progressMilestone',
+          className: 'list-item-progress-bar',
+          hideFieldName: true,
+          valueTemplateUrl: '/templates/progress-bar-row.html',
+          barDisplayFields: progressBarDisplayFields,
+          barOptions: progressBarOptions
+
+        },
+        {
+          displayName: 'Due',
+          field: 'dueDate',
+          className: 'list-item-text',
+          valueTemplateUrl: '/templates/key-value-date.html'
+        }
+
+      ],
+      activityDetail: {
+        active: [
+          {
+            displayName: 'Due',
+            field: 'dueDate',
+            valueTemplateUrl: '/templates/key-value-date.html'
+          },
+          {
+            displayName: 'Status',
+            field: 'statusCode'
+          }
+        ],
+        complete: [
+          {
+            displayName: 'Due',
+            field: 'dueDate',
+            valueTemplateUrl: '/templates/key-value-date.html'
+          },
+          {
+            displayName: 'Status',
+            field: 'statusCode'
+          },
+          {
+            displayName: 'Completed',
+            field: 'completedDate',
+            valueTemplateUrl: '/templates/key-value-date.html'
+          }
+        ]
+      }
     },
-    active: [
+    list: [
       {
         'goalId': 91,
         'goalName': 'good-test',
@@ -40,12 +110,45 @@
         'goalCompletedDate': null,
         'patientActivities': [
           {
+            'activityId': 96,
+            'activityName': 'Exercise',
+            'activityTypeId': 9,
+            'description': 'be good',
+            'dueDate': '2016-03-03T00:00:00',
+            'progressMilestone': 0,
+            'goalId': 91,
+            'statusCode': 'Active',
+            'completedDate': null
+          },
+          {
             'activityId': 97,
             'activityName': 'Exercise',
             'activityTypeId': 9,
             'description': 'be good',
             'dueDate': '2016-03-03T00:00:00',
-            'progressMilestone': 28,
+            'progressMilestone': 25,
+            'goalId': 91,
+            'statusCode': 'Active',
+            'completedDate': null
+          },
+          {
+            'activityId': 98,
+            'activityName': 'Exercise',
+            'activityTypeId': 9,
+            'description': 'be good',
+            'dueDate': '2016-03-03T00:00:00',
+            'progressMilestone': 50,
+            'goalId': 91,
+            'statusCode': 'Active',
+            'completedDate': null
+          },
+          {
+            'activityId': 99,
+            'activityName': 'Exercise',
+            'activityTypeId': 9,
+            'description': 'be good',
+            'dueDate': '2016-03-03T00:00:00',
+            'progressMilestone': 75,
             'goalId': 91,
             'statusCode': 'Active',
             'completedDate': null
@@ -111,9 +214,7 @@
             'completedDate': null
           }
         ]
-      }
-    ],
-    complete: [
+      },
       {
         'goalId': 92,
         'goalName': 'be cool',

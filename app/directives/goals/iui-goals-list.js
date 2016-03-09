@@ -16,6 +16,14 @@
 
   function GoalsListController($scope, goals) {
     $scope.goals = goals;
+
+    $scope.goals.active = goals.list.filter(function(goal) {
+      return goal.statusCode === 'Active';
+    });
+
+    $scope.goals.complete = goals.list.filter(function(goal) {
+      return goal.statusCode === 'Completed';
+    });
   }
 
 })(window.app);

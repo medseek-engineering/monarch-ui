@@ -22,9 +22,20 @@
   text-transform: uppercase;
 }
 
+// Stylying of Progress bar - getting rid of Bootstrapfullness
+.progress {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.progress-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 
 // Link list
-
 .list-item-title, .list-item-text {
   float: left;
 }
@@ -55,5 +66,32 @@ $totalListDateWidth: $listDateSpacing + $listDateFieldWidth + $listDateSpacing +
   }
   > .key-value-value {
     width: $listDateValueWidth;
+  }
+}
+
+.list-item-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  > .progress {
+    height: 5px;
+    margin-bottom: 0;
+    background: none;
+  }
+}
+
+.activity-progress-bar {
+  // height of input button is 34px; height of progressbar is 20px; 34-20 = 14px; 1/2 of 14 is 7px;
+  padding-top: 7px;
+  display: block;
+}
+
+// Holy selectors batman! TODO: add ability to add class to `a` tag for iui-link list
+.list-group-progress-bars > .list-group > .list-group-item > .list-group-item-link {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  > .icon-arrow-right {
+    top: 9px;
   }
 }

@@ -1,1 +1,2 @@
-{{ fieldData[displayField.field] | date }}
+<span ng-if="fieldData[displayField.field]">{{ fieldData[displayField.field] | date }}</span>
+<span ng-if="!fieldData[displayField.field]">&mdash;</span>
