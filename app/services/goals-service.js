@@ -15,6 +15,16 @@
   ];
 
   app.value('goals', {
+    activityTypes: [
+      {
+        activityName: 'Exercise',
+        activityTypeId: 9
+      },
+      {
+        activityName: 'Coping',
+        activityTypeId: 43
+      }
+    ],
     barOptions: progressBarOptions,
     displayFields: {
       progressBar: progressBarDisplayFields,
