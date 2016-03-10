@@ -1,10 +1,16 @@
 @import "iui-general";
+
 @import "_table";
+
 @import "_lists";
+
+@import "_charts";
 
 .container-fluid {
   max-width: 1000px;
 }
+
+
 
 .main-nav {
   margin: 20px -15px;

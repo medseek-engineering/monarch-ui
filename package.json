@@ -7,11 +7,11 @@
   "dependencies": {
     "browser-sync": "^2.8.2",
     "ui-core": "^1.0.0",
+    "iui-charts": "^1.0.0",
     "iui-general": "^1.0.0",
     "iui-lists": "^1.0.4",
     "iui-table": "^1.0.0",
     "iui-alerts": "^1.0.0",
-    "longitudinal-view": "^1.0.0",
     "lodash": "~2.4.1",
     "d3": "^3.5.14",
     "express": "^4.13.3",
@@ -53,9 +53,9 @@
     "base": "./app/",
     "styleModules": [
       "iui-general",
+      "iui-charts",
       "iui-lists",
-      "iui-table",
-      "longitudinal-view"
+      "iui-table"
     ],
     "compass": {
       "sass": "app/themes/default_sass",
