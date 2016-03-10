@@ -184,5 +184,27 @@
     "params": [
       "taskId"
     ]
+  },
+  "/health-information/": {
+    "title": "Health Information",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/health-information/health-information-main/"
+    },
+    "primaryNav": true,
+    "moduleId": "healthInformation"
+  },
+  "/health-information/longitudinal-view": {
+    "title": "Longitudinal View",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/health-information/longitudinal-view/"
+    },
+    "breadcrumb": [
+      {"name": "Health Information", "url": "/health-information/"}
+    ],
+    "moduleId": "healthInformation"
   }
 }
