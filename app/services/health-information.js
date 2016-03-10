@@ -2,28 +2,38 @@
   'use strict';
 
   var healthInformation = {
+    settings: {
+      longitudinalView: {
+        dataKeyProperty: 'Key'
+      }
+    },
     displayFields: [
       {
-        Key: 'weights',
+        key: 'weights',
         metricProperties: ['weight'],
-        type: 'trend'
+        type: 'trend',
+        recordsProperty: 'Records'
       },
       {
-        Key: 'bloodPressures',
+        key: 'bloodPressures',
         metricProperties: ['systolic', 'diastolic'],
-        type: 'trend'
+        type: 'trend',
+        recordsProperty: 'Records'
       },
       {
-        Key: 'medications',
-        type: 'event'
+        key: 'medications',
+        type: 'event',
+        recordsProperty: 'Records'
       },
       {
-        Key: 'encounter',
-        type: 'event'
+        key: 'encounter',
+        type: 'event',
+        recordsProperty: 'Records'
       },
       {
-        Key: 'tasks',
-        type: 'event'
+        key: 'tasks',
+        type: 'event',
+        recordsProperty: 'Records'
       }
     ],
     data: [
