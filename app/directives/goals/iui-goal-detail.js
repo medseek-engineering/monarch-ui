@@ -41,6 +41,7 @@
     function completeGoal(goal) {
       goal.goalCompletedDate = new Date();
       goal.statusCode = 'Completed';
+      $location.path('/goals/');
     }
   }
 
