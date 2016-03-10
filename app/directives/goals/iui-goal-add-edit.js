@@ -19,13 +19,9 @@
 
   function GoalAddEditController($scope, goals, $location) {
 
-    var goalId      =  parseInt($scope.routeParams.goalId);
-    var activityId  =  parseInt($scope.routeParams.activityId);
-
-    $scope.editMode =  false;
     var original;
-    var originalGoal;
-
+    var goalId      =  parseInt($scope.routeParams.goalId);
+    $scope.editMode =  false;
     $scope.goals    =  goals;
 
 
@@ -46,6 +42,7 @@
         var index = goals.list.indexOf(original);
         if (index  !== -1) {
           goals.list[index] = $scope.goal;
+          $location.path('/goals/detail/' + $scope.goal.goalId  );
         }
       } else {
         $scope.goal.goalId = goals.list.length + 1;
@@ -53,10 +50,10 @@
         $scope.goal.completedDate = null;
         $scope.goal.statusCode = 'Active';
         $scope.goal.patientActivities = [];
-
         goals.list.push($scope.goal);
+        $location.path('/goals/detail/' + $scope.goal.goalId + '/add'  );
       }
-      $location.path('/goals/detail/' + $scope.goal.goalId  );
+      
     };
   }
 
