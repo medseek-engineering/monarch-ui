@@ -60,6 +60,7 @@
       activity.progressMilestone = 100;
       activity.completedDate = new Date();
       activity.statusCode = 'Completed';
+      $location.path('/goals/detail/'+activity.goalId+'/');
     }
   }
 

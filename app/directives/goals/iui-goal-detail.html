@@ -26,7 +26,7 @@
     link-index-property="activityId">
   </iui-link-list>
 </section>
-<div class="form-group">
+<div class="form-group" ng-if="goal.statusCode === 'Active'">
   <a 
     ng-href="/goals/detail/{{goal.goalId}}/add"
     class="btn btn-default">

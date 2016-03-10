@@ -60,6 +60,36 @@
       "activityId"
     ]
   },
+  "/goals/detail/:goalId/edit": {
+    "title": "Goal",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/goals/goal-add-edit"
+    },
+    "breadcrumb": [
+      {"name": "Goals", "url": "/goals/"}
+    ],
+    "moduleId": "goals",
+    "params": [
+      "goalId"
+    ]
+  },
+  "/goals/add/": {
+    "title": "Add Goal",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "sections": {
+      "main": "modules/goals/goal-add-edit"
+    },
+    "breadcrumb": [
+      {"name": "Goals", "url": "/goals/"}
+    ],
+    "moduleId": "goals",
+    "params": [
+      "goalId"
+    ]
+  },
   "/goals/detail/:goalId/activity/:activityId/edit": {
     "title": "Activity",
     "layout": "layouts/default",
