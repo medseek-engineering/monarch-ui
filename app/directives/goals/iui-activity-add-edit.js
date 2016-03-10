@@ -32,6 +32,16 @@
     if (goalId) {
 
       $scope.goal   =  _.findWhere(goals.list, { goalId: goalId });
+      app.routing.data.breadcrumb = app.routing.data.breadcrumb = [
+        {
+          name: 'Goals',
+          url: '/goals/'
+        },
+        {
+          name: $scope.goal.goalName,
+          url: '/goals/detail/'+$scope.goal.goalId+'/'
+        }
+      ];
 
       if (activityId) {
         original    =  _.findWhere($scope.goal.patientActivities, {activityId: activityId });
