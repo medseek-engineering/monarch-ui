@@ -27,3 +27,6 @@ iisnode/
 *.map
 
 app/themes/default/main*
+app/common/dist*
+
+app/directives/directive-templates.js

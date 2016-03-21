@@ -6,9 +6,16 @@ var apiRoot = 'http://localhost:3000/';
 module.exports = {
   client: {
     debug: true,
+    useExpresCompress: process.env.USE_EXPRESS_COMPRESS,
     head: {
       stylesheets: [],
-      scripts: []
+      scripts: [],
+      scriptsWithoutCompress: [],
+      addlPathedScripts: [],
+      settings: {
+        combine: process.env.COMBINE,
+        jsCompression: 'uglifyjs'
+      }
     },
     app: {
       root: appRoot,
