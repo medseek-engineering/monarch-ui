@@ -6,13 +6,6 @@
   "author": "Influence Health",
   "dependencies": {
     "browser-sync": "^2.8.2",
-    "ui-core": "^1.0.0",
-    "iui-charts": "^1.0.0",
-    "iui-general": "^1.0.0",
-    "iui-lists": "^1.0.4",
-    "iui-table": "^1.0.0",
-    "iui-alerts": "^1.0.0",
-    "lodash": "~2.4.1",
     "d3": "^3.5.14",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
@@ -21,10 +14,16 @@
     "gulp-filter": "^3.0.0",
     "gulp-jshint": "^1.11.2",
     "gulp-minify-css": "^1.2.0",
+    "gulp-ng-html2js": "^0.2.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-rename": "~0.2.2",
     "gulp-uglify": "~0.2.0",
     "gulp-util": "~2.2.12",
+    "iui-alerts": "^1.0.0",
+    "iui-charts": "^1.0.0",
+    "iui-general": "^1.0.0",
+    "iui-lists": "^1.0.4",
+    "iui-table": "^1.0.0",
     "jquery": "~2.1.4",
     "jshint": "~2.3.0",
     "jshint-stylish": "~1.0.0",
@@ -33,10 +32,12 @@
     "karma-html-reporter": "~0.1.1",
     "karma-jasmine": "~0.2.2",
     "karma-ng-html2js-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "^1.0.0",
     "karma-requirejs": "~0.2.0",
     "karma-spec-reporter": "0.0.6",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "phantomjs-prebuilt": "^2.1.4"
+    "lodash": "~2.4.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "ui-core": "^1.0.0"
   },
   "devDependencies": {
     "medseek-config": "^0.0.1"
@@ -57,6 +58,11 @@
       "iui-lists",
       "iui-table"
     ],
+    "createTemplates": {
+      "moduleName": "app",
+      "prefix": "/",
+      "templateFile": "directive-templates.js"
+    },
     "compass": {
       "sass": "app/themes/default_sass",
       "css": "app/themes/default",
@@ -72,11 +78,18 @@
         "./app/**/*.js"
       ],
       "jsFiles": [
-        "./app/**/*.js"
+        "./app/**/*.js",
+        "!./app/directives/directive-templates.js",
+        "!./app/common/dist/combined.min.js"
+      ],
+      "templateFiles": [
+        "./app/**/*.html",
+        "!./app/modules/**/*.html"
       ]
     },
     "destination": {
-      "css": "./app/themes/default"
+      "css": "./app/themes/default",
+      "js": "./app/directives/"
     }
   },
   "scripts": {

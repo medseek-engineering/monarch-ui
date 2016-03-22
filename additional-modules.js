@@ -5,7 +5,7 @@ additionalModules = [
   {
     nodeModuleName: 'd3',
     files: [
-      'd3.min.js'
+      'd3.js'
     ]
   },
   {
@@ -20,9 +20,18 @@ module.exports = {
   config: function (conf) {
     additionalModules.forEach(function (addlModule) {
       console.log('Using ' + addlModule.nodeModuleName);
-      addlModule.files.forEach(function (filePath) {
-        conf.client.head.scripts.push(conf.client.app.root + '$' + addlModule.nodeModuleName + '/' + filePath);
-      });
+      if (conf.client.head.settings &&
+          conf.client.head.settings.combine &&
+          conf.client.head.addlPathedScripts) {
+        var modulePath = path.dirname(require.resolve(addlModule.nodeModuleName)) + '/';
+        addlModule.files.forEach(function (filePath) {
+          conf.client.head.addlPathedScripts.unshift(modulePath + filePath);
+        });
+      } else {
+        addlModule.files.forEach(function (filePath) {
+          conf.client.head.scripts.push(conf.client.app.root + '$' + addlModule.nodeModuleName + '/' + filePath);
+        });
+      }
     });
   },
   app: function (app) {
