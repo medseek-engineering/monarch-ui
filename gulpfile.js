@@ -3,7 +3,7 @@
 
   var gulp = require('gulp');
   var gulpConcat = require('gulp-concat');
-  var minifyCSS = require('gulp-minify-css');
+  var cleanCSS = require('gulp-clean-css');
   var compass = require('gulp-compass');
   var karma = require('karma').server;
   var jshint = require('gulp-jshint');
@@ -82,7 +82,10 @@
         console.log(error);
         this.emit('end');
       })
-      .pipe(minifyCSS())
+      .pipe(cleanCSS({
+        compatibility: 'ie9',
+        processImport: false
+      }))
       .pipe(gulp.dest(packageJson.buildSettings.destination.css))
       .pipe(browserSync.stream());
   });
