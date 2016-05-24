@@ -1,0 +1,43 @@
+$side-panel-breakpoint: $bp-md;
+$side-panel-detail-width: 360px;
+
+@media (max-width: ($side-panel-breakpoint - 1px)) {
+  .side-panel-hidden-small {
+    display: none;
+  }
+  .side-panel-open > .side-panel-list {
+    display: none;
+  }
+}
+
+@media (min-width: $side-panel-breakpoint) {
+  .side-panel-visible-small {
+    display: none;
+  }
+
+  .side-panel {
+    display: none;
+    position: absolute;
+    overflow-y: auto;
+    bottom: 0;
+    top: 0;
+    width: $side-panel-detail-width;
+    padding: 15px;
+    background: white;
+  }
+
+  .side-panel-right {
+    right: 0;
+    border-left: 1px solid gainsboro;
+  }
+
+  .side-panel-open {
+    position: relative;
+    > .side-panel-list {
+      max-width: calc(100% - #{$side-panel-detail-width});
+    }
+    > .side-panel{
+      display: block;
+    }
+  }
+}

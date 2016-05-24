@@ -9,6 +9,9 @@
       <a href="{{routeKey}}">{{routeValue.title}}</a>
     </li>
   </ul>
-  <iui-page-header heading-text="{{app.routing.data.title}}" breadcrumb="app.routing.data.breadcrumb"></iui-page-header>
+  <iui-page-header
+    ng-if="!app.routing.data.hidePageHeader"
+    heading-text="{{app.routing.data.title}}"
+    breadcrumb="app.routing.data.breadcrumb"></iui-page-header>
   <module path="page.sections.main" />
 </main>

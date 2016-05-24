@@ -1,10 +1,12 @@
 @import "iui-general";
 
 @import "_table";
-
 @import "_lists";
-
 @import "_charts";
+@import "_calendar.scss";
+@import "_side-panel";
+
+@import "_physician-schedules.scss";
 
 .container-fluid {
   max-width: 1000px;

@@ -1,0 +1,16 @@
+<form ng-submit="updateSlot(physician, slot, original)">
+  <h2 class="popover-header">Schedule Block Details</h2>
+  <schedule-block-form
+    slot="slot"></schedule-block-form>
+  <div class="form-group">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      role="button">Save &amp; Close</button>
+    <button
+      class="btn btn-default"
+      type="button" 
+      role="button"
+      ng-click="goToPhysicianSchedule(physician.physicianId)">Cancel</button>
+  </div>
+</form>

@@ -5,6 +5,7 @@
   "description": "monarch-ui",
   "author": "Influence Health",
   "dependencies": {
+    "angular-ui-bootstrap": "~0.12.1",
     "browser-sync": "^2.8.2",
     "d3": "^3.5.14",
     "express": "^4.13.3",
@@ -36,8 +37,10 @@
     "karma-requirejs": "~0.2.0",
     "karma-spec-reporter": "0.0.6",
     "lodash": "~2.4.1",
+    "moment": "^2.13.0",
     "phantomjs-prebuilt": "^2.1.4",
-    "ui-core": "^1.0.0"
+    "ui-core": "^1.0.0",
+    "iui-calendar": "git+ssh://git@github.com:medseek-engineering/iui-calendar.git"
   },
   "devDependencies": {
     "medseek-config": "^0.0.1"
@@ -55,6 +58,7 @@
     "styleModules": [
       "iui-general",
       "iui-charts",
+      "iui-calendar",
       "iui-lists",
       "iui-table"
     ],

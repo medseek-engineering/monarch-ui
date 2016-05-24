@@ -1,0 +1,11 @@
+<div ng-controller="AppointmentSchedulesController as appointmentSchedules">
+   <mf-auto-complete
+     ng-required="true"
+     is-physicians="true"
+     source="empower/autocomplete/webPhysicians"
+     field="field"
+     form="{}"
+     ng-model="physician"></mf-auto-complete>
+  {{appointmentSchedules.boom}}
+  <a href="/physician-schedules/34">Physician Detail</a>
+</div>

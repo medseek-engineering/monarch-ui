@@ -11,6 +11,7 @@ ui.use(require('iui-table'));
 ui.use(require('iui-lists'));
 ui.use(require('iui-alerts'));
 ui.use(require('iui-charts'));
+ui.use(require('iui-calendar'));
 
 // start the UI server
 ui.start();

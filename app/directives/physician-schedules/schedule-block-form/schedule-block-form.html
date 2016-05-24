@@ -1,0 +1,56 @@
+<div class="form-group">
+  <label class="control-label" for="scheduleDate">Date</label>
+  <div class="input-group">
+    <input
+      id="scheduleDate"
+      type="text"
+      class="form-control"
+      datepicker-popup="shortDate"
+      ng-model="slot.date"
+      is-open="opened"
+      min-date="minDate"
+      max-date="maxDate"
+      datepicker-options="dateOptions" 
+      close-text="Close">
+    <span class="input-group-btn">
+      <button
+        type="button"
+        class="btn btn-default"
+        ng-click="open($event)">
+        <i class="glyphicon glyphicon-calendar"></i>
+        <span class="sr-only">Open Calendar</span>
+      </button>
+    </span>
+  </div>
+</div>
+<fieldset class="form-group">
+  <legend class="control-label">Start Time</legend>
+  <timepicker ng-model="slot.start"></timepicker>
+</fieldset>
+<fieldset class="form-group">
+  <legend class="control-label">End Time</legend>
+  <timepicker ng-model="slot.end"></timepicker>
+</fieldset>
+<div class="form-group">
+  <label for="schedule_location" class="control-label">Location</label>
+  <select
+    class="form-control"
+    id="schedule_location">
+    <option value="">Select Location</option>
+  </select>
+</div>
+<fieldset class="form-group">
+  <legend class="control-label">Appointment Types</legend>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="slot.newPatients">
+      New Patients
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="slot.existingPatients">
+      Existing Patients
+    </label>
+  </div>
+</fieldset>

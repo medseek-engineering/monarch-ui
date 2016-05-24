@@ -1,0 +1,33 @@
+<div
+  class="clearfix"
+  ng-controller="PhysicianScheduleController as physicianScheduleController"
+  ng-class="{'side-panel-open': app.routing.routeParams.slotId}"
+  >
+  <section class="side-panel-list">
+    <iui-page-header
+      heading-text="{{physicianScheduleController.physician.name}}"
+      breadcrumb="app.routing.data.breadcrumb"></iui-page-header>
+    <h2 class="physician-speciality" ng-if="physicianScheduleController.physician.speciality">{{physicianScheduleController.physician.speciality}}</h2>
+    <div
+      class="iui-calendar"
+      ng-if="physicianScheduleController.physician.eventData"
+      ng-model="physicianScheduleController.physician.eventData"
+      calendar="physicianCalendar"
+      ui-calendar="physicianScheduleController.calendarCallbacks"></div>
+
+  </section>
+  <article
+    class="side-panel side-panel-right"
+    ng-if="app.routing.routeParams.slotId">
+    <button
+      ng-click="physicianScheduleController.goToPhysicianSchedule(app.routing.routeParams.physicianId)"
+      class="close side-panel-hidden-small">
+      &times;
+      <span class="sr-only">Close</span>
+    </button>
+    <edit-physician-slot
+      physician="physicianScheduleController.physician"
+      slot-id="app.routing.routeParams.slotId"></edit-physician-slot>
+  </article>
+
+</div>

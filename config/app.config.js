@@ -9,7 +9,10 @@ module.exports = {
     useExpresCompress: process.env.USE_EXPRESS_COMPRESS,
     head: {
       stylesheets: [],
-      scripts: [],
+      scripts: [
+        'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js',
+        '/common/include-dependencies.js'
+      ],
       scriptsWithoutCompress: [],
       addlPathedScripts: [],
       settings: {

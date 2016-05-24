@@ -206,5 +206,53 @@
       {"name": "Health Information", "url": "/health-information/"}
     ],
     "moduleId": "healthInformation"
+  },
+  "/physician-schedules": {
+    "title": "Physician Schedules",
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "moduleId": "AppointmentRequest",
+    "primaryNav": true,
+    "inPrimaryNav": true,
+    "translateKey": "Appointments",
+    "sections": {
+      "main": "modules/physician-schedules/physician-search"
+    },
+    "permissions": []
+  },
+  "/physician-schedules/:physicianId": {
+    "title": "Physician Schedule",
+    "hidePageHeader": true,
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "moduleId": "AppointmentRequest",
+    "sections": {
+      "main": "modules/physician-schedules/physician-schedule"
+    },
+    "permissions": [],
+    "breadcrumb": [
+      {"name": "Physician Schedules", "url": "/physician-schedules/"}
+    ],
+    "params": [
+      "physicianId"
+    ]
+  },
+  "/physician-schedules/:physicianId/:slotId": {
+    "title": "Schedule Block Details",
+    "hidePageHeader": true,
+    "layout": "layouts/default",
+    "theme": "themes/default",
+    "moduleId": "AppointmentRequest",
+    "sections": {
+      "main": "modules/physician-schedules/physician-schedule"
+    },
+    "permissions": [],
+    "breadcrumb": [
+      {"name": "Physician Schedules", "url": "/physician-schedules/"}
+    ],
+    "params": [
+      "physicianId",
+      "slotId"
+    ]
   }
 }

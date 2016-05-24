@@ -13,6 +13,12 @@ additionalModules = [
     files: [
       'lodash.js'
     ]
+  },
+  {
+    nodeModuleName: 'moment',
+    files: [
+      'moment.js'
+    ]
   }
 ];
 
@@ -36,6 +42,8 @@ module.exports = {
   },
   app: function (app) {
     additionalModules.forEach(function (addlModule) {
+      console.log(addlModule.nodeModuleName);
+
       addlModule.path = path.dirname(require.resolve(addlModule.nodeModuleName)) + '/';
       app.get('/\\$' + addlModule.nodeModuleName + '/*', function (req, res) {
         res.sendfile(addlModule.path + req.params[0]);
