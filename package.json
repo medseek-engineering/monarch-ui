@@ -1,99 +1,111 @@
 {
   "name": "monarch-ui",
   "version": "1.0.0",
-  "uiVersion": "1.0.0",
-  "description": "monarch-ui",
-  "author": "Influence Health",
-  "dependencies": {
-    "browser-sync": "^2.8.2",
-    "d3": "^3.5.14",
-    "express": "^4.13.3",
-    "gulp": "^3.9.0",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "~2.1.7",
-    "gulp-clean-css": "^2.0.3",
-    "gulp-filter": "^3.0.0",
-    "gulp-jshint": "^1.11.2",
-    "gulp-ng-html2js": "^0.2.0",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-rename": "~0.2.2",
-    "gulp-uglify": "~0.2.0",
-    "gulp-util": "~2.2.12",
-    "iui-alerts": "^1.0.0",
-    "iui-charts": "^1.0.0",
-    "iui-general": "^1.0.0",
-    "iui-lists": "^1.0.4",
-    "iui-table": "^1.0.0",
-    "jquery": "~2.1.4",
-    "jshint": "~2.3.0",
-    "jshint-stylish": "~1.0.0",
-    "karma": "~0.12.1",
-    "karma-coverage": "~0.1",
-    "karma-html-reporter": "~0.1.1",
-    "karma-jasmine": "~0.2.2",
-    "karma-ng-html2js-preprocessor": "~0.1.0",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-requirejs": "~0.2.0",
-    "karma-spec-reporter": "0.0.6",
-    "lodash": "~2.4.1",
-    "phantomjs-prebuilt": "^2.1.4",
-    "ui-core": "^1.0.0"
+  "description": "Angular directive & styles",
+  "main": "./app.js",
+  "private": false,
+  "scripts": {
+    "build": "rimraf dist && webpack --bail --progress --profile",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "test": "karma start",
+    "test-watch": "karma start --auto-watch --no-single-run",
+    "start": "npm run server"
   },
-  "devDependencies": {
-    "medseek-config": "^0.0.1"
-  },
-  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/medseek-engineering/monarch-ui.git"
   },
-  "engines": {
-    "node": ">=0.10.21"
+  "author": "Influence Health, Inc.",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/medseek-engineering/monarch-ui/issues"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-foundation-6": "^0.10.25",
+    "angular-translate": "^2.13.1",
+    "angular-ui-bootstrap": "0.12.1",
+    "angular-ui-router": "^1.0.0-rc.1",
+    "browser-sync": "^2.18.7",
+    "express": "^4.14.1",
+    "foundation-sites-loader": "^1.0.1",
+    "ng-annotate-loader": "^0.2.0",
+    "url-loader": "^0.5.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.6.1",
+    "autoprefixer": "^6.0.3",
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "copy-webpack-plugin": "4.0.1",
+    "css-loader": "0.14.0",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.7.1",
+    "istanbul-instrumenter-loader": "^1.0.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^1.1.0",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "2.0.1",
+    "ngtemplate-loader": "^1.3.1",
+    "node-libs-browser": "2.0.0",
+    "node-sass": "^4.4.0",
+    "null-loader": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "postcss-loader": "1.2.2",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "2.2.0"
   },
   "buildSettings": {
     "base": "./app/",
     "styleModules": [
-      "iui-general",
-      "iui-charts",
-      "iui-lists",
-      "iui-table"
+      "iui-general"
     ],
     "createTemplates": {
-      "moduleName": "app",
-      "prefix": "/",
-      "templateFile": "directive-templates.js"
+      "moduleName": "monarch.ui",
+      "prefix": "/$monarch-ui/",
+      "templateFile": "templates.js"
+    },
+    "combineFiles": {
+      "ignore": "!./lib/src/**/*.test.js"
     },
     "compass": {
-      "sass": "app/themes/default_sass",
-      "css": "app/themes/default",
+      "sass": "lib/src",
+      "css": "lib/dist",
       "require": []
     },
     "appFiles": {
       "styles": [
-        "./app/themes/default_sass/**/*.scss",
-        "./app/themes/default_sass/*.scss"
+        "./lib/src/**/*.scss",
+        "./lib/src/*.scss"
       ],
       "htmlFiles": [
-        "./app/**/*.html",
-        "./app/**/*.js"
+        "./lib/src/**/*.html",
+        "./lib/src/**/*.js"
       ],
       "jsFiles": [
-        "./app/**/*.js",
-        "!./app/directives/directive-templates.js",
-        "!./app/common/dist/combined.min.js"
+        "./lib/src/**/*.js",
+        "./lib/src/*.js"
       ],
       "templateFiles": [
-        "./app/**/*.html",
-        "!./app/modules/**/*.html"
+        "./lib/src/**/*.html"
       ]
     },
     "destination": {
-      "css": "./app/themes/default",
-      "js": "./app/directives/"
+      "css": "./lib/dist",
+      "js": "./lib/dist",
+      "jsFile": "iui-module.js",
+      "jsFileMin": "iui-module.min.js"
     }
-  },
-  "scripts": {
-    "start": "node app.js",
-    "postinstall": "gulp build"
   }
 }

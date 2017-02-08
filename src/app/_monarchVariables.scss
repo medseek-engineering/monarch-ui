@@ -1,0 +1,55 @@
+/*
+--------------------------------------------------------------------------
+  Colors
+--------------------------------------------------------------------------
+*/
+
+// General Colors
+$sg_bold_blue: #0072bc !default;
+$sg_bold_blue_active: darken($sg_bold_blue, 10%) !default;
+$sg_bashful_blue: #6fa9df !default;
+$sg_bashful_blue_dark: darken($sg_bashful_blue, 3%) !default;
+$sg_baby_blue: lighten($sg_bashful_blue, 28%) !default;
+$sg_teal_primary: #00a79b !default;
+$sg_rosy_red: #E06666 !default;
+$sg_gamma_green: #6AA84F !default;
+$sg_granny_smith_green: #93c470 !default;
+$sg_organic_orange: #F90 !default;
+$sg_prairie_purple: #8c7db7 !default;
+$sg_yummy_yellow: #FFCD5D !default;
+
+// Gray Colors
+$sg_dark_grey: #333 !default;
+$sg_medium_grey: #666 !default;
+$sg_light_grey: #999 !default;
+$sg_dark_highlight: #B4B4B4 !default;
+$sg_light_highlight: #CCC !default;
+$sg_table_row: #EBEBEB !default;
+$sg_light_grey_background: #e8e8e8 !default;
+$sg_light_grey_border: darken($sg_light_grey_background, 8%) !default;
+$sg_small_text_gray: #898989 !default;
+$sg_disabled_background: #eeeeee !default;
+$sg_secondary_background: #f8f8f8 !default;
+
+// Setting App Primaries
+$sg_primary: $sg_bashful_blue !default;
+$sg_secondary: $sg_bold_blue !default;
+$sg_tertiary: $sg_teal_primary !default;
+$sg_alert_success: $sg_gamma_green !default;
+$sg_alert_warning: $sg_organic_orange !default;
+$sg_alert_danger: $sg_rosy_red !default;
+
+// Normalcy ranges. Used in charts
+$sg_normalcy_below: $sg_bashful_blue !default;
+$sg_normalcy_normal: $sg_gamma_green !default;
+$sg_normalcy_warning: $sg_yummy_yellow !default;
+$sg_normalcy_borderline: $sg_organic_orange !default;
+$sg_normalcy_danger: $sg_rosy_red !default;
+$sg_normalcy_extreme: $sg_prairie_purple !default;
+$sg_normalcy_not-coded: $sg_bold_blue !default;
+$sg_normalcy_undefined: $sg_light_grey !default;
+
+
+$sg_font_family: "Gotham SSm A", "Gotham SSm B" !default;
+$sg_font_weight: 400 !default;
+$sg_font_style: normal !default;

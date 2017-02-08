@@ -1,0 +1,40 @@
+%sidebar-menu-over {
+  color: $sg_dark_grey;
+  background: none;
+}
+
+.monarch-sidebar {
+
+  .menu > li > a {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .badge {
+    background-color: $sg_rosy_red;
+    border-radius: 1em;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    min-width: 3em;
+
+  }
+  .active > a {
+    @extend %sidebar-menu-over;
+    background: rgba(black, 0.1);
+  }
+  a {
+    position: relative;
+    color: $sg_dark_grey;
+    padding-right: 3em;
+    .badge {
+      position: absolute;
+      top: 50%;
+      right: 1em;
+      transform: translateY(-50%);
+    }
+    &:hover, &:focus {
+      @extend %sidebar-menu-over;
+    }
+  }
+}

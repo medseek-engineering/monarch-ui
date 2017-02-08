@@ -1,0 +1,33 @@
+
+.tile {
+  border: 1px solid $sg_light_grey_border;
+  background-color: white;
+  position: relative;
+  margin-bottom: 1em;
+  > table {
+    margin-bottom: 0;
+  }
+}
+
+.tile-header {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $sg_primary;
+
+  }
+  padding: 1em 2em 1em 1em;
+}
+
+.tile-title {
+  margin: 0;
+}
+
+.tile-section {
+  padding: 1em;
+  border-top: 1px solid $sg_light_grey_border;
+}

@@ -1,0 +1,291 @@
+@import 'monarchVariables';
+
+
+html {
+  font-size: 13px;
+}
+
+body {
+  background: $sg_light_grey_background;
+  font-family: $sg_font_family;
+  margin: 0;
+  color: $sg_dark_grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sg_font_family;
+}
+
+h2, .stat {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4,
+.page-actions > li > a {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+%basic-link {
+  color: $sg_secondary;
+  &:hover, &:focus {
+    color: $sg_primary;
+  }
+}
+
+
+a {
+  @extend %basic-link;
+}
+
+.row-full {
+  max-width: 100%;
+}
+
+
+.button {
+  border-radius: 4px;
+}
+
+.button.primary {
+  background-color: $sg_primary;
+}
+
+.button, .button.secondary {
+  
+  color: $sg_secondary;
+  background-color: white;
+  border: 1px solid $sg_light_grey_border;
+  &:hover, &:focus {
+    border-color: $sg_primary;
+    color: white;
+    background-color: $sg_primary;
+  }
+}
+
+.page-header {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.page-actions {
+  margin-top: 0.25em;
+  float: right;
+}
+
+.symbol-defs {
+  display: none;
+}
+
+
+
+.ih-logo-svg {
+  margin: 0;
+  fill: currentColor;
+}
+
+.icon {
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.off-canvas-wrapper,
+.off-canvas-wrapper-inner,
+.off-canvas-content {
+  min-height: 100vh;
+}
+
+.off-canvas-content {
+  background-color: $sg_light_grey_background;
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-width: 992px) {
+  .monarch-site-header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .monarch-site-body {
+    padding-top: 53px;
+  }
+}
+
+
+
+.off-canvas-wrapper {
+  background-color: $sg_primary;
+  .close-button {
+    color: white;
+  }
+}
+
+.off-canvas {
+  background: none;
+  .menu a {
+    color: white;
+    &:hover, &:focus {
+      background-color: $sg_secondary;
+    }
+  }
+}
+
+.logo-container {
+  display: block;
+  padding: 0.7rem 1rem;
+  max-width: 200px;
+}
+
+.ih-logo {
+  display: block;
+  width: 100%;
+  padding-bottom: 20.113314%;
+  background-repeat: no-repeat;
+  background-image: url('IH_logo_teal.svg');
+  background-size: contain;
+}
+
+
+
+
+.page-wrapper {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+table thead tr th {
+  border-top: 1px solid $sg_light_grey_border;
+}
+
+table tbody tr:nth-child(even) {
+  background: none;
+}
+
+table tbody th {
+  text-align: left;
+}
+
+table thead tr th:first-child,
+table tbody tr th:first-child,
+table tbody tr td:first-child {
+  padding-left: 1em;
+}
+
+table tbody tr {
+  border-top: 1px solid $sg_light_grey_border;
+}
+
+
+.row-flush {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  > .column {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .column {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a {
+  > h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  &.button {
+    &::after {
+      border-color: $sg_secondary transparent transparent;
+    }
+    &.primary {
+      &::after {
+        border-color: white transparent transparent;
+      }
+    }
+    &:hover, &:focus {
+      &::after {
+        border-color: white transparent transparent;
+      }
+    }
+  }
+  &:not(.button) {
+    &::after {
+      border-color: $sg_secondary transparent transparent;
+    }
+    &:hover, &:focus {
+      &::after {
+        border-color: $sg_primary transparent transparent;
+      }
+    }
+  }
+  
+}
+
+.accordion {
+  background: none;
+}
+
+.accordion-item.is-active {
+  > .accordion-content {
+    display: block;
+  }
+}
+
+.accordion-title {
+  @extend %basic-link;
+  font-size: 1em;
+  border: none;
+  border-top: 1px solid $sg_light_grey_border;
+  &::before {
+    content: '';
+  }
+  &:hover, &:focus {
+    background: none;
+  }
+}
+
+.is-active > .accordion-title::before {
+  content: '';
+}
+
+.accordion-content {
+  border: none;
+  background: none;
+  padding-top: 0;
+}
+
+// Forms
+
+label {
+  font-size: 1em;
+}
+
+@import 'common/header/header';
+@import 'common/sidebar/sidebar';
+@import 'common/page/page';
+@import 'components/dashboard/dashboard';
+@import 'components/leads/leads';

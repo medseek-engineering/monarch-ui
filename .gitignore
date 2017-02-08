@@ -30,3 +30,9 @@ app/themes/default/main*
 app/common/dist*
 
 app/directives/directive-templates.js
+
+dist
+
+*.sublime-workspace
+
+*.sublime-project
