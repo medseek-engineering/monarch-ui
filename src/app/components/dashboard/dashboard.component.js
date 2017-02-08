@@ -1,7 +1,7 @@
-import template from './dashboard.html';
+//import template from './dashboard.html';
 
 export const DashboardComponent = {
-  template,
+  template: '<h1>Dashboard</h1>',
   controller: class DashboardComponent {
     constructor() {
       'ngInject';
