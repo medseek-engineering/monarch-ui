@@ -85,8 +85,6 @@ a {
   display: none;
 }
 
-
-
 .ih-logo-svg {
   margin: 0;
   fill: currentColor;
@@ -307,10 +305,19 @@ label {
   font-size: 1em;
 }
 
+hr {
+  border-bottom-color: $sg_light_grey_border;
+}
+
 @import 'common/header/header';
 @import 'common/sidebar/sidebar';
 @import 'common/page/page';
 @import 'common/tile/tile';
 @import 'components/dashboard/dashboard';
-@import 'components/leads/leads';
+@import 'components/audience/audience';
+@import 'components/campaigns/campaigns';
+@import 'components/crm/crm';
+@import 'components/library/library';
+@import 'components/reports/reports';
 @import 'components/content-apps/content-apps';
+@import 'components/admin/admin';

@@ -1,6 +1,12 @@
 export const ContentAppsComponent = {
   template: `
-      <div class="no-page-heading tile-grid">
+    <div class="row row-flush page-header">
+      <div class="column">
+        <h2>Content Apps</h2>
+      </div>
+    </div>
+
+      <div class="tile-grid">
         <monarch-tile
           ng-repeat="tile in $ctrl.tiles track by tile.stateName"
           tile="tile">

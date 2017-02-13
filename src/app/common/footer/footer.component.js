@@ -4,5 +4,6 @@ export const FooterComponent = {
       id="monarch-site-footer"
       class="monarch-footer">
     </footer>
+    <monarch-symbol-defs></monarch-symbol-defs>
   `
 };

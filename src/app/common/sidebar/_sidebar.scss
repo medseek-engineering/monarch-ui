@@ -38,3 +38,23 @@
     }
   }
 }
+
+.sidebar-heading {
+  padding: 1rem;
+  margin: 0;
+}
+
+.sidebar-heading-link {
+  padding: 0;
+  > a {
+    display: block;
+    padding: 1rem;
+    &:hover, &:focus {
+      color: $sg_primary;
+    }
+  }
+}
+
+hr + .sidebar-heading, hr + .sidebar-heading-link > a {
+  padding-top: 0;
+}

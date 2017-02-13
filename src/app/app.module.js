@@ -22,5 +22,9 @@ export const AppModule = angular
     });
     $urlRouterProvider.otherwise('/dashboard');
   })
+  .run(($trace)=>{
+    'ngInject';
+    $trace.enable('TRANSITION');
+  })
   .component('monarchApp', AppComponent)
   .name;

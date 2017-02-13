@@ -1,38 +1,3 @@
-const modes = [
-  {
-    title: 'Dashboard',
-    stateName: 'dashboard'
-  },
-  {
-    title: 'Audience',
-    stateName: 'audience'
-  },
-  {
-    title: 'Campaigns',
-    stateName: 'campaigns'
-  },
-  {
-    title: 'CRM',
-    stateName: 'crm'
-  },
-  {
-    title: 'Library',
-    stateName: 'library'
-  },
-  {
-    title: 'Reports',
-    stateName: 'reports'
-  },
-  {
-    title: 'Content Apps',
-    stateName: 'contentApps'
-  },
-  {
-    title: 'Admin',
-    stateName: 'admin'
-  }
-];
-
 export const ModeSwitcherComponent = {
   template: `
     <ul class="dropdown menu dropdown-mode" dropdown-menu>
@@ -41,8 +6,8 @@ export const ModeSwitcherComponent = {
         <ul class="menu">
           <li
             ui-sref-active="active"
-            ng-repeat="menuItem in $ctrl.modes track by menuItem.stateName">
-            <a ui-sref="{{menuItem.stateName}}">
+            ng-repeat="menuItem in $ctrl.modes track by menuItem.name">
+            <a ui-sref="{{menuItem.name}}">
               {{menuItem.title}}
             </a>
           </li>
@@ -53,10 +18,12 @@ export const ModeSwitcherComponent = {
 
   `,
   controller: class ModeSwitcherComponent {
-    constructor($state) {
+    constructor($state, modesMenu) {
       'ngInject';
-      this.modes = modes;
       this.state = $state;
+      this.modes = modesMenu.map((menuItem) => {
+        return $state.get(menuItem);
+      });
     }
   }
 };
