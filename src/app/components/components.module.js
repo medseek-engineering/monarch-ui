@@ -1,10 +1,22 @@
 import angular from 'angular';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AudienceModule } from './audience/audience.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
 import { LeadsModule } from './leads/leads.module';
+import { LibraryModule } from './library/library.module';
+import { ReportsModule } from './reports/reports.module';
+import { ContentAppsModule } from './content-apps/content-apps.module';
+import { AdminModule } from './admin/admin.module';
 
 export const ComponentsModule = angular
   .module('monarch.components', [
     DashboardModule,
-    LeadsModule
+    AudienceModule,
+    CampaignsModule,
+    LeadsModule,
+    LibraryModule,
+    ReportsModule,
+    ContentAppsModule,
+    AdminModule
   ])
   .name;

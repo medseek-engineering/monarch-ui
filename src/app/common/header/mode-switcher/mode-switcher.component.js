@@ -4,24 +4,20 @@ const modes = [
     stateName: 'dashboard'
   },
   {
-    title: 'Audiences',
-    stateName: 'audiences'
-  },
-  {
-    title: 'Lists',
-    stateName: 'lists'
+    title: 'Audience',
+    stateName: 'audience'
   },
   {
     title: 'Campaigns',
     stateName: 'campaigns'
   },
   {
-    title: 'Library',
-    stateName: 'library'
-  },
-  {
     title: 'CRM',
     stateName: 'leads'
+  },
+  {
+    title: 'Library',
+    stateName: 'library'
   },
   {
     title: 'Reports',

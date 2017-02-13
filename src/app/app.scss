@@ -268,6 +268,10 @@ table tbody tr {
   }
 }
 
+:last-child:not(.is-active) > .accordion-title {
+  border-color: $sg_light_grey_border;
+}
+
 .is-active > .accordion-title::before {
   content: '';
 }
@@ -276,6 +280,25 @@ table tbody tr {
   border: none;
   background: none;
   padding-top: 0;
+}
+
+.menu-2-across {
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  max-height: 18rem;
+  > li {
+    flex: 0 0 50%;
+  }
+}
+
+.no-page-heading {
+  padding-top: 1rem;
 }
 
 // Forms
@@ -287,5 +310,7 @@ label {
 @import 'common/header/header';
 @import 'common/sidebar/sidebar';
 @import 'common/page/page';
+@import 'common/tile/tile';
 @import 'components/dashboard/dashboard';
 @import 'components/leads/leads';
+@import 'components/content-apps/content-apps';

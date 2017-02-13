@@ -86,60 +86,9 @@ export const DashboardComponent = {
       </div>
 
       <div class="row row-flush">
-<!--         <div class="column">
-
-
-          <div class="tile">
-            <div class="tile-header">
-              <h3 class="tile-title">28 Day Social Snapshot <small>as of Feb 2, 2017</small></h3>
-            </div>
-            <div class="tile-section">
-              <div class="row">
-                <div class="columns medium-6 large-3">
-                  <p>Total Leads</p>
-                  <div class="stat">128</div>
-                  <div class="stat-difference">
-                    +12  +3%
-                  </div>
-                </div>
-                <div class="columns medium-6 large-3">
-                  <p>Total Spend</p>
-                  <div class="stat">$380</div>
-                  <div class="stat-difference">
-                    -$10  -2%
-                  </div>
-                </div>
-                <div class="columns medium-6 large-3">
-                  <p>Cost per Lead</p>
-                  <div class="stat">$1.45</div>
-                  <div class="stat-difference">
-                    -$0.13  -2%
-                  </div>
-                </div>
-                <div class="columns medium-6 large-3">
-                  <p>Conversion Rate</p>
-                  <div class="stat">67%</div>
-                  <div class="stat-difference">
-                    +2%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-        </div> -->
-
-
         <div class="column">
-          <div class="tile">
-            <div class="tile-header">
-              <h3 class="tile-title">Lifetime Overview <small>as of Feb 2, 2017</small></h3>
-            </div>
-              <table>
+          <monarch-tile tile="$ctrl.lifeTimeOverviewTile">
+            <table>
 <tbody><tr><th>Top Campaigns (by spend)</th>
 <th>Leads</th>
 <th>Spend</th>
@@ -231,7 +180,7 @@ export const DashboardComponent = {
 </tr>
 </tbody>
 </table>
-          </div>
+          </monarch-tile>
         </div>
 
       </div>
@@ -241,6 +190,10 @@ export const DashboardComponent = {
     constructor() {
       'ngInject';
       this.currentDate = new Date();
+      this.lifeTimeOverviewTile = {
+        title: 'Lifetime Overview',
+        titleCaption: 'as of Feb 2, 2017'
+      };
     }
   }
 };

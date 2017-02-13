@@ -13,5 +13,14 @@ export const AppModule = angular
     uiRouter,
     'mm.foundation'
   ])
+  .config(($locationProvider, $urlRouterProvider)=>{
+    'ngInject';
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false,
+      rewriteLinks: true
+    });
+    $urlRouterProvider.otherwise('/dashboard');
+  })
   .component('monarchApp', AppComponent)
   .name;
