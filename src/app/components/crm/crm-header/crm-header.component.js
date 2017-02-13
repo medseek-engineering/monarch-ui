@@ -4,13 +4,6 @@ export const CRMHeaderComponent = {
     <div class="column">
       <h2>CRM</h2>
     </div>
-    <div class="column">
-      <ul class="page-actions dropdown menu dropdown-large" dropdown-menu>
-        <li>
-          <a ui-sref="crm({leadId: 'ADD'})" class="button">Add Lead</a>
-        </li>
-      </ul>
-    </div>
   </div>
   `
 };

@@ -64,9 +64,11 @@ a.card {
 .wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  overflow-x: hidden;
   > * {
     display: block;
+   
   }
   > monarch-sidebar {
     width: 200px;
@@ -77,21 +79,43 @@ a.card {
   }
   > monarch-page {
     border: 1px solid $sg_light_grey_border;
-    flex-grow: 1;
     background-color: white;
+    width: calc(100% - 200px);
+    transition: width 200ms;
+
   }
   > monarch-side-panel {
+    width: 480px;
+    transform: translateX(480px);
     border-color: $sg_light_grey_border;
     border-style: solid;
     border-width: 1px 0 1px 0;
-    flex-grow: 1;
-    min-width: 35rem;
+    transition: transform 200ms;
+  }
+}
 
+.side-panel-open {
+  > monarch-page {
+    width: calc(100% - 680px);
+  }
+  > monarch-side-panel {
+    transform: translateX(0);
   }
 }
 
 .filter-bar {
   padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+}
+
+.filter-bar-left {
+  flex-grow: 1;
+}
+.filter-bar-right {
+  flex-shrink: 1;
 }
 
 .large-list {

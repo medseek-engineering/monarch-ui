@@ -111,14 +111,23 @@ export const CRMComponent = {
       </monarch-sidebar>
       <monarch-page>
         <div class="filter-bar">
-          <ul class="dropdown menu" dropdown-menu>
-            <li>
-              <a href="" class="button">Filter</a>
-              <ul class="menu">
-                <li><a href="">Create Filter</a></li>
-              </ul>
-            </li>
-          </ul>
+          <div class="filter-bar-left">
+            <ul class="dropdown menu" dropdown-menu>
+              <li>
+                <a href="" class="button">Filter</a>
+                <ul class="menu">
+                  <li><a href="">Create Filter</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="filter-bar-right">
+            <ul class="menu">
+              <li>
+                <a ui-sref="crm({leadId: 'ADD'})" class="button primary">Add Lead</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <ul class="accordion">
           <li class="accordion-item" ng-class="{'is-active': $ctrl.stateParams.today}">
@@ -135,7 +144,7 @@ export const CRMComponent = {
           </li>
         </ul>
       </monarch-page>
-      <monarch-side-panel ng-if="$ctrl.stateParams.leadId" class="side-panel">
+      <monarch-side-panel class="side-panel">
         <button class="close-button" aria-label="Close menu" type="button" ui-sref="crm({leadId: null})">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -156,6 +165,10 @@ export const CRMComponent = {
           </label>
           <label>
             Last Name
+            <input type="text">
+          </label>
+          <label ng-repeat="field in $ctrl.displayFields track by field.field">
+            {{field.name}}
             <input type="text">
           </label>
         </div>
