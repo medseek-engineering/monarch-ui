@@ -74,8 +74,8 @@ const displayFields = [
 ];
 
 
-export const LeadsComponent = {
-  controller: class LeadsComponent {
+export const CRMComponent = {
+  controller: class CRMComponent {
     constructor($stateParams, $filter, $scope, $state) {
       'ngInject';
       this.leads = {

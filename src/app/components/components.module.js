@@ -2,7 +2,7 @@ import angular from 'angular';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AudienceModule } from './audience/audience.module';
 import { CampaignsModule } from './campaigns/campaigns.module';
-import { LeadsModule } from './leads/leads.module';
+import { CRMModule } from './crm/crm.module';
 import { LibraryModule } from './library/library.module';
 import { ReportsModule } from './reports/reports.module';
 import { ContentAppsModule } from './content-apps/content-apps.module';
@@ -13,7 +13,7 @@ export const ComponentsModule = angular
     DashboardModule,
     AudienceModule,
     CampaignsModule,
-    LeadsModule,
+    CRMModule,
     LibraryModule,
     ReportsModule,
     ContentAppsModule,

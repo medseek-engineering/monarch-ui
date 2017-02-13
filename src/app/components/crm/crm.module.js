@@ -1,19 +1,19 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import { LeadsComponent } from './leads.component';
+import { CRMComponent } from './crm.component';
 
-export const LeadsModule = angular
-  .module('monarch.leads', [
+export const CRMModule = angular
+  .module('monarch.crm', [
     uiRouter
   ])
-  .component('leads', LeadsComponent)
+  .component('crm', CRMComponent)
   .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
     $stateProvider
-      .state('leads', {
+      .state('crm', {
         title: 'CRM',
-        url: '/leads?box&leadId&today&yesterday&twoDaysAgo&threeDaysAgo&add',
-        component: 'leads',
+        url: '/crm?box&leadId&today&yesterday&twoDaysAgo&threeDaysAgo&add',
+        component: 'crm',
         params: {
           box: 'all',
           today: 'true',

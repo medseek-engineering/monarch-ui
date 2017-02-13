@@ -13,7 +13,7 @@ const modes = [
   },
   {
     title: 'CRM',
-    stateName: 'leads'
+    stateName: 'crm'
   },
   {
     title: 'Library',
