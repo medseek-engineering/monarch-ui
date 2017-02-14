@@ -286,13 +286,7 @@ table tbody tr {
     display: table;
     clear: both;
   }
-  display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
-  max-height: 18rem;
-  > li {
-    flex: 0 0 50%;
-  }
+  columns: 2;
 }
 
 .no-page-heading {
