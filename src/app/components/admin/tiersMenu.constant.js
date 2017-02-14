@@ -9,7 +9,7 @@ export const tiersMenu = [
       },
       {
         title: 'User Management',
-        name: 'userManagement'
+        name: 'admin.userManagement'
       },
       {
         title: 'Accounts',
@@ -27,7 +27,7 @@ export const tiersMenu = [
       },
       {
         title: 'User Management',
-        name: 'userManagement'
+        name: 'admin.userManagement'
       },
       {
         title: 'Accounts',
@@ -61,7 +61,7 @@ export const tiersMenu = [
       },
       {
         title: 'User Management',
-        name: 'userManagement'
+        name: 'admin.userManagement'
       },
       {
         title: 'Accounts',

@@ -74,6 +74,13 @@ a {
 .page-header {
   margin-top: 1em;
   margin-bottom: 1em;
+  & + .filter-bar {
+    border-top: 1px solid $sg_light_grey_border;
+  }
+}
+
+.page-top-wrapper {
+  border-top: none;
 }
 
 .page-actions {
@@ -301,6 +308,136 @@ label {
 
 hr {
   border-bottom-color: $sg_light_grey_border;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+
+.card-list > .card:not(:last-child) {
+  border-width: 1px 1px 0 1px;
+}
+
+.card-list.card-flush > .card {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+
+.card {
+  position: relative;
+  display: block;
+  background-color: white;
+  border: 1px solid $sg_light_grey_border;
+  padding: 1em;
+  small {
+    font-size: 1em;
+    color: $sg_light_grey;
+  }
+  > .row-flush {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+
+  &.active {
+    background-color: $sg_baby_blue;
+  }
+}
+
+.card-new {
+  .card-title {
+    color: $sg_secondary;
+  }
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    content: '';
+    width: 3px;
+    background-color: $sg_primary;
+    height: calc(100% - 1px);
+    transform: translateY(-50%);
+  }
+}
+
+a.card {
+  color: $sg_dark_grey;
+  &:not(.active) {
+    &:hover, &:focus {
+      background-color: darken(#eee, 5%);
+    }
+  }
+}
+
+.side-panel {
+  position: relative;
+  background-color: white;
+  padding: 1em;
+  .close-button {
+    color: $sg_light_grey;
+  }
+}
+
+
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  min-height: 800px;
+  > * {
+    display: block;
+   
+  }
+  > monarch-sidebar {
+    background-color: white;
+    width: 250px;
+  }
+  > monarch-page {
+    flex-grow: 1;
+    border-left: 1px solid $sg_light_grey_border;
+    border-right: 1px solid $sg_light_grey_border;
+    background-color: white;
+    transition: width 200ms;
+
+  }
+  > monarch-side-panel {
+    flex-grow: 1;
+  }
+}
+
+
+
+.filter-bar {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+}
+
+.filter-bar-left {
+  flex-grow: 1;
+}
+.filter-bar-right {
+  flex-shrink: 1;
+}
+
+.large-list {
+  > dt {
+    color: $sg_light_grey;
+    padding-top: 0.5em;
+    &:not(:first-child) {
+      border-top: 1px solid $sg_light_grey_border;
+    }
+  }
+  > dd {
+    padding-bottom: 0.5rem;
+    font-size: 1.25em;
+  }
 }
 
 @import 'common/header/header';

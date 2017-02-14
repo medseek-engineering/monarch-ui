@@ -2,6 +2,20 @@ export const tiers = {
   entities: [
     {
       title: 'Healthcare Marketing',
+      users: [
+        {
+          userId: 0,
+          firstName: 'John',
+          lastName: 'Smith',
+          email: 'john.smith@gmail.com'
+        },
+        {
+          userId: 1,
+          firstName: 'Jane',
+          lastName: 'Smith',
+          email: 'jane.smith@gmail.com'
+        }
+      ],
       entities: [
         {
           title: 'MedSports Ortho',

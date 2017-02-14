@@ -1,7 +1,9 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import { AdminLandingModule } from './landing/admin-landing.module';
+import { UserManagementModule } from './user-management/user-management.module';
 import { AdminComponent } from './admin.component';
-import { TierComponent } from './tier.component'
+import { TierComponent } from './tier.component';
 
 import { tiersMenu } from './tiersMenu.constant';
 import { tiers } from './tiers.constant';
@@ -9,12 +11,14 @@ import { tiers } from './tiers.constant';
 
 export const AdminModule = angular
   .module('monarch.admin', [
-    uiRouter
+    uiRouter,
+    AdminLandingModule,
+    UserManagementModule
   ])
   .constant('tiersMenu', tiersMenu)
   .constant('tiers', tiers)
-  .component('tier', TierComponent)
   .component('admin', AdminComponent)
+  .component('tier', TierComponent)
   .config(($stateProvider) => {
     'ngInject';
     $stateProvider
@@ -22,6 +26,16 @@ export const AdminModule = angular
         title: 'Admin',
         url: '/admin',
         component: 'admin'
+      })
+      .state('admin.landing', {
+        title: 'Admin',
+        url: '/',
+        component: 'adminLanding'
+      })
+      .state('admin.userManagement', {
+        title: 'User Management',
+        url: '/user-management?userId',
+        component: 'userManagement'
       });
   })
   .name;

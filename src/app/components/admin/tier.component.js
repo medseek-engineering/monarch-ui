@@ -5,13 +5,17 @@ export const TierComponent = {
     selectedEntity: '='
   },
   template: `
-    <h3 class="tier-title">{{$ctrl.tier.title}}</h3>
-    <select
-      ng-options="option.title for option in $ctrl.entities"
-      ng-model="$ctrl.selectedEntity">
-    </select>
+    <div class="tier-block-wrapper">
+      <h3 class="tier-title">{{$ctrl.tier.title}}</h3>
+      <select
+        ng-options="option.title for option in $ctrl.entities"
+        ng-model="$ctrl.selectedEntity">
+      </select>
+    </div>
     <ul class="tier-menu menu vertical">
-      <li ng-repeat="menuItem in $ctrl.tier.menu">
+      <li
+        ui-sref-active="active"
+        ng-repeat="menuItem in $ctrl.tier.menu">
         <a ui-sref="{{menuItem.name}}">{{menuItem.title}}</a>
       </li>
     </ul>

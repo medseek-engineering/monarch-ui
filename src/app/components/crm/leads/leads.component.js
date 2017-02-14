@@ -95,7 +95,7 @@ export const LeadsComponent = {
         if(!newVal) {
           return;
         }
-        this.selectedLead = leads.find((element)=>{
+        this.selected = leads.find((element)=>{
           return element.id === parseInt(newVal);
         })
       });
@@ -103,7 +103,7 @@ export const LeadsComponent = {
   },
   template: `
     <div
-      class="wrapper with-sidebar with-side-panel"
+      class="crm-wrapper wrapper with-sidebar with-side-panel"
       ng-class="{'side-panel-open': $ctrl.stateParams.leadId}">
       <monarch-sidebar>
         <crm-sidebar></crm-sidebar>
@@ -132,28 +132,28 @@ export const LeadsComponent = {
           <li class="accordion-item" ng-class="{'is-active': $ctrl.stateParams.today}">
             <a ui-sref="crm.leads({today: !$ctrl.stateParams.today})" class="accordion-title">Today</a>
             <div class="accordion-content">
-              <leads-list leads="$ctrl.leads.today"></leads-list>
+              <leads-list class="card-list" leads="$ctrl.leads.today"></leads-list>
             </div>
           </li>
           <li class="accordion-item" ng-class="{'is-active': $ctrl.stateParams.yesterday}">
             <a ui-sref="crm.leads({yesterday: !$ctrl.stateParams.yesterday})" class="accordion-title">Yesterday</a>
             <div class="accordion-content">
-              <leads-list leads="$ctrl.leads.yesterday"></leads-list>
+              <leads-list class="card-list" leads="$ctrl.leads.yesterday"></leads-list>
             </div>
           </li>
         </ul>
       </monarch-page>
-      <monarch-side-panel class="side-panel">
+      <monarch-side-panel class="side-panel" ng-if="$ctrl.stateParams.leadId">
         <button class="close-button" aria-label="Close menu" type="button" ui-sref="crm.leads({leadId: null})">
           <span aria-hidden="true">&times;</span>
         </button>
         <div ng-if="$ctrl.stateParams.leadId !== 'ADD'">
-          <h6>{{$ctrl.selectedLead.id}}</h6>
-          <h2>{{$ctrl.selectedLead.firstName}} {{$ctrl.selectedLead.lastName}}</h2>
-          <small>{{$ctrl.selectedLead.lastUpdated}}</small>
+          <h6>{{$ctrl.selected.id}}</h6>
+          <h2>{{$ctrl.selected.firstName}} {{$ctrl.selected.lastName}}</h2>
+          <small>{{$ctrl.selected.lastUpdated}}</small>
           <dl class="large-list">
             <dt ng-repeat-start="field in $ctrl.displayFields track by field.field">{{field.name}}</dt>
-            <dd ng-repeat-end>{{$ctrl.selectedLead[field.field]}}</dd>
+            <dd ng-repeat-end>{{$ctrl.selected[field.field]}}</dd>
           </dl>
         </div>
         <div ng-if="$ctrl.stateParams.leadId === 'ADD'">
