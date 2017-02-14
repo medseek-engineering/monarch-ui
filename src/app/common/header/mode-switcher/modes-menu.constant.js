@@ -1,10 +1,10 @@
 export const modesMenu = [
   'dashboard',
   'audience',
+  'contentApps',
   'campaigns',
   'crm',
   'library',
   'reports',
-  'contentApps',
   'admin'
 ];
