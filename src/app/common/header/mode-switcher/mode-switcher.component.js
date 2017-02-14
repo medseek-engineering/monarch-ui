@@ -2,7 +2,7 @@ export const ModeSwitcherComponent = {
   template: `
     <ul class="dropdown menu dropdown-mode" dropdown-menu>
       <li>
-        <a tabindex="0">{{$ctrl.state.current.title}}</a>
+        <a tabindex="0">{{$ctrl.currentMode}}</a>
         <ul class="menu">
           <li
             ui-sref-active="active"
@@ -18,12 +18,22 @@ export const ModeSwitcherComponent = {
 
   `,
   controller: class ModeSwitcherComponent {
-    constructor($state, modesMenu) {
+    constructor($state, modesMenu, $transitions) {
       'ngInject';
-      this.state = $state;
-      this.modes = modesMenu.map((menuItem) => {
+
+      var vm = this;
+
+      vm.modes = modesMenu.map((menuItem) => {
         return $state.get(menuItem);
       });
+
+      vm.currentMode = $state.get('dashboard').title;
+
+      $transitions.onSuccess({ }, function(trans) {
+        var states = Object.keys($state.$current.includes);
+        vm.currentMode = $state.get(states[1]).title;
+      });
+
     }
   }
 };

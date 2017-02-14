@@ -2,7 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import { CRMHeaderModule } from './crm-header/crm-header.module';
 import { CRMSidebarModule } from './crm-sidebar/crm-sidebar.module';
-import { LeadsListModule } from './leads-list/leads-list.module';
+import { LeadsModule } from './leads/leads.module';
 import { CRMComponent } from './crm.component';
 
 export const CRMModule = angular
@@ -10,7 +10,7 @@ export const CRMModule = angular
     uiRouter,
     CRMHeaderModule,
     CRMSidebarModule,
-    LeadsListModule
+    LeadsModule
   ])
   .component('crm', CRMComponent)
   .config(($stateProvider, $urlRouterProvider) => {
@@ -18,8 +18,13 @@ export const CRMModule = angular
     $stateProvider
       .state('crm', {
         title: 'CRM',
-        url: '/crm?box&leadId&today&yesterday&twoDaysAgo&threeDaysAgo&add',
-        component: 'crm',
+        url: '/crm',
+        component: 'crm'
+      })
+      .state('crm.leads', {
+        title: 'CRM - Leads',
+        url: '/leads?box&leadId&today&yesterday&twoDaysAgo&threeDaysAgo&add',
+        component: 'leads',
         params: {
           box: 'all',
           today: 'true',

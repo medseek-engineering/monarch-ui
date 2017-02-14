@@ -4,7 +4,7 @@ export const LeadsListComponent = {
   },
   template: `
     <a
-      ui-sref="crm({leadId: lead.id })"
+      ui-sref="crm.leads({leadId: lead.id })"
       ui-sref-active="active"
       class="card"
       ng-class="{'card-new': lead.status === 'New'}"
