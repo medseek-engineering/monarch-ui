@@ -55,12 +55,9 @@ a {
   border-radius: 4px;
 }
 
-.button.primary {
-  background-color: $sg_primary;
-}
+
 
 .button, .button.secondary {
-  
   color: $sg_secondary;
   background-color: white;
   border: 1px solid $sg_light_grey_border;
@@ -69,6 +66,11 @@ a {
     color: white;
     background-color: $sg_primary;
   }
+}
+
+.button.primary {
+  background-color: $sg_primary;
+  border: none;
 }
 
 .page-header {
