@@ -395,7 +395,7 @@ a.card {
   color: $sg_dark_grey;
   &:not(.active) {
     &:hover, &:focus {
-      background-color: darken(#eee, 5%);
+      background-color: transparent;
     }
   }
 }
