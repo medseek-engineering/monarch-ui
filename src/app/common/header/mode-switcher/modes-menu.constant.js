@@ -6,5 +6,5 @@ export const modesMenu = [
   'crm',
   'library',
   'reports',
-  'admin.landing'
+  'admin'
 ];

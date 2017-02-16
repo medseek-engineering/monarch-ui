@@ -167,7 +167,7 @@ $header-menu-search-margin: 0.5rem;
 
 .header-shaded {
   background: $sg_teal_primary;
-  //background: linear-gradient(to right, lighten($sg_teal_primary, 5%), darken($sg_teal_primary, 5%));
+  background: linear-gradient(to right, lighten($sg_teal_primary, 5%), darken($sg_teal_primary, 5%));
   color: white;
   border-bottom: none;
   .ih-logo {

@@ -4,12 +4,14 @@ export const tiers = {
       title: 'Healthcare Marketing',
       users: [
         {
+          active: true,
           userId: 0,
           firstName: 'John',
           lastName: 'Smith',
           email: 'john.smith@gmail.com'
         },
         {
+          active: true,
           userId: 1,
           firstName: 'Jane',
           lastName: 'Smith',

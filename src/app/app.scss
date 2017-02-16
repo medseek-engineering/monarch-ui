@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $sg_font_family;
 }
 
-h2, .stat {
+h2 {
   font-size: 2em;
 }
 
@@ -53,6 +53,7 @@ a {
 
 .button {
   border-radius: 4px;
+  text-transform: uppercase;
 }
 
 
@@ -185,8 +186,11 @@ table tbody tr:nth-child(even) {
   background: none;
 }
 
-table tbody th {
+table thead th, table tbody th {
   text-align: left;
+  text-transform: uppercase;
+  color: $sg_medium_grey;
+  font-weight: 400;
 }
 
 table thead tr th:first-child,
@@ -263,6 +267,7 @@ table tbody tr {
 }
 
 .accordion-title {
+  text-transform: uppercase;
   @extend %basic-link;
   font-size: 1em;
   border: none;
@@ -430,7 +435,9 @@ a.card {
 
 .large-list {
   > dt {
-    color: $sg_light_grey;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $sg_medium_grey;
     padding-top: 0.5em;
     &:not(:first-child) {
       border-top: 1px solid $sg_light_grey_border;
@@ -440,6 +447,16 @@ a.card {
     padding-bottom: 0.5rem;
     font-size: 1.25em;
   }
+}
+
+.stat {
+  font-size: 3.5em;
+  font-weight: 300;
+}
+
+.stat-difference {
+  color: $sg_medium_grey;
+  font-size: 1.25em;
 }
 
 @import 'common/header/header';

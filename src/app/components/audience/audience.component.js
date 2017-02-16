@@ -1,10 +1,6 @@
 export const AudienceComponent = {
   template: `
-      <div class="row row-flush page-header">
-        <div class="column">
-          <h2>Audience</h2>
-        </div>
-      </div>
+      <div ui-view></div>
   `,
   controller: class AudienceComponent {
     constructor() {

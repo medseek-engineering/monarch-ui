@@ -1,0 +1,105 @@
+.graph {
+  background-color: transparent;
+  height: 8rem;
+  width: 100%;
+  display: block;
+}
+
+.graph svg {
+  overflow: visible;
+}
+.domain {
+  display: none;
+}
+.tick {
+  shape-rendering: "crispEdges";
+  stroke: white;
+  stroke-width: 1px;
+}
+.graph-val {
+  text-anchor: end;
+}
+
+text {
+  fill: white;
+}
+
+.line {
+  fill: none;
+  stroke-width: 3px;
+  stroke: $sg_primary;
+  vector-effect: non-scaling-stroke;
+}
+
+.area {
+  fill: $sg_baby_blue;
+  vector-effect: non-scaling-stroke;
+}
+
+.tile-stat {
+  > .tile-header {
+    padding-bottom: 0.5rem;
+  }
+  > .tile-body {
+    padding-top: 2rem;
+    position: relative;
+    > .stat-wrapper {
+      top: 0;
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .tile-featured-stat {
+    .stat {
+      font-size: 5em;
+    }
+    .stat-difference {
+      font-size: 2em;
+      font-weight: 300;
+
+    }
+   .graph {
+      height: 22.23rem;
+   }
+  }
+}
+
+
+.stat-wrapper {
+  padding-left: 1rem;
+  > .stat {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.circle-progress {
+  stroke-width: 1rem;
+  stroke: darken($sg_light_grey_background, 10%);
+}
+
+.progress {
+  stroke: $sg_teal_primary;
+}
+
+.consumer-index-circle {
+  width: 303px;
+}
+
+.consumer-index-circle-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.consumer-index-text {
+  color: $sg_teal_primary;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  font-weight: 200;
+}
+
+    

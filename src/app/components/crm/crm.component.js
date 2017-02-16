@@ -2,7 +2,6 @@ export const CRMComponent = {
   controller: class CRMComponent {
     constructor($state) {
       'ngInject';
-      $state.go('crm.leads');
     }
   },
   template: `

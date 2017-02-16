@@ -19,7 +19,8 @@ export const CRMModule = angular
       .state('crm', {
         title: 'CRM',
         url: '/crm',
-        component: 'crm'
+        component: 'crm',
+        redirectTo: 'crm.leads'
       })
       .state('crm.leads', {
         title: 'CRM - Leads',

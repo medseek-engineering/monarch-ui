@@ -46,7 +46,9 @@
 
 .sidebar-heading-link {
   padding: 0;
+  text-transform: uppercase;
   > a {
+    color: $sg_medium_grey;
     display: block;
     padding: 1rem;
     &:hover, &:focus {

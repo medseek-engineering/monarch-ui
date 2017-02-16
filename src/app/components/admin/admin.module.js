@@ -25,7 +25,8 @@ export const AdminModule = angular
       .state('admin', {
         title: 'Admin',
         url: '/admin',
-        component: 'admin'
+        component: 'admin',
+        redirectTo: 'admin.landing'
       })
       .state('admin.landing', {
         title: 'Admin',
