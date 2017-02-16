@@ -1,0 +1,51 @@
+.audience-detail-wrapper {
+  height: calc(100vh - 141px);
+  min-height: 0;
+  > monarch-sidebar {
+    width: 400px;
+    overflow-y: auto;
+  }
+  > monarch-page {
+    width: calc(100% - 400px);
+    position: relative;
+  }
+}
+
+.person-card-list {
+  padding: 1rem;
+  position: absolute;
+  top: 14em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.audience-top {
+  min-height: 14em;
+  border-bottom: 1px solid $sg_light_grey_border;
+  background-color: white;
+  position: relative;
+}
+
+.map {
+  background: url('predict-map.jpg') no-repeat;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  width: 400px;
+  bottom: 0;
+  position: absolute;
+}
+
+.audience-stats {
+  padding: 4rem 2rem;
+  max-width: calc(100% - 400px);
+}
+
+
+
+.stat-heading {
+  text-transform: uppercase;
+  font-size: 1.25em;
+}

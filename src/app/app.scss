@@ -438,7 +438,10 @@ a.card {
   }
 }
 
-
+.scroll {
+  overflow-y: auto;
+  max-height: 100vh;
+}
 
 .filter-bar {
   padding: 1em;
