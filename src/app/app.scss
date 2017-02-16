@@ -1,6 +1,10 @@
 @import 'monarchVariables';
 
 
+@mixin big-drop-shadow() {
+  box-shadow: 0 1px 30px rgba(black, 0.1);
+}
+
 html {
   font-size: 13px;
 }
@@ -178,9 +182,19 @@ a {
   display: none;
 }
 
+table thead, table tfoot {
+  background: none;
+}
+
+table thead {
+
+}
+
 table thead tr th {
   border-top: 1px solid $sg_light_grey_border;
 }
+
+
 
 table tbody tr:nth-child(even) {
   background: none;
@@ -201,6 +215,10 @@ table tbody tr td:first-child {
 
 table tbody tr {
   border-top: 1px solid $sg_light_grey_border;
+}
+
+table tbody tr:first-child {
+  border-top: 2px solid $sg_light_grey_border;
 }
 
 
@@ -257,7 +275,7 @@ table tbody tr {
 }
 
 .accordion {
-  background: none;
+  background: $sg_light_grey_background;
 }
 
 .accordion-item.is-active {
@@ -292,6 +310,10 @@ table tbody tr {
   border: none;
   background: none;
   padding-top: 0;
+}
+
+.card-list {
+  display: block;
 }
 
 .menu-2-across {
@@ -395,6 +417,7 @@ a.card {
   flex-wrap: wrap;
   overflow-x: hidden;
   min-height: 800px;
+  @include big-drop-shadow();
   > * {
     display: block;
    
@@ -407,7 +430,6 @@ a.card {
     flex-grow: 1;
     border-left: 1px solid $sg_light_grey_border;
     border-right: 1px solid $sg_light_grey_border;
-    background-color: white;
     transition: width 200ms;
 
   }
@@ -423,7 +445,7 @@ a.card {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  
+  background-color: white;
 }
 
 .filter-bar-left {

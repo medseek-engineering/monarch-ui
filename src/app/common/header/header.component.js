@@ -15,7 +15,7 @@ export const HeaderComponent = {
       <div class="title-bar-right">
         <ul class="dropdown menu" dropdown-menu>
           <li><button class="monarch-search-button"><span>Search everything</span><svg class="icon icon-search"><use xlink:href="#icon-search" /></svg></button></li>
-          <li><a href="">Notifications</a></li>
+          <li class="notification"><a href=""><span class="icon-circle"><span class="number">3</span><svg class="icon icon-notification"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-notification"></use></svg></span></a></li>
           <li>
             <a class="multi-line-menu-link" tabindex="0"><small>Healthcare Marketing<br>Peachtree Hospital</small></a>
             <ul id="client-dropdown-menu" class="menu">

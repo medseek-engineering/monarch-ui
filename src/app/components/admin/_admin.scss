@@ -1,12 +1,12 @@
 
 .tiers {
+
   background-color: white;
-  border-top: 1px solid $sg_light_grey_border;
-  border-bottom: 1px solid $sg_light_grey_border;
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
   align-items: stretch;
+  @include big-drop-shadow();
   > * {
     display: block;
     min-width: 33.3333333333%;
