@@ -74,8 +74,13 @@ a {
 }
 
 .button.primary {
-  background-color: $sg_primary;
+  background-color: $sg_secondary;
   border: none;
+  &:hover, &:focus {
+    border-color: $sg_primary;
+    color: white;
+    background-color: $sg_primary;
+  }
 }
 
 .page-header {

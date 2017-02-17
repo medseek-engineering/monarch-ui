@@ -12,7 +12,7 @@ export const AudienceListComponent = {
           <div class="filter-bar-left">
             <ul class="dropdown menu" dropdown-menu>
               <li class="filter-bar-input">
-                <input type="search" placeholder="Search Audiences" />
+                <input ng-model="$ctrl.searchFilter" type="search" placeholder="Search Audiences" />
               </li>
               <li>
                 <a href="" class="button">Filter</a>
@@ -34,7 +34,7 @@ export const AudienceListComponent = {
           <a
             ui-sref="audience.detail({audienceId: audience.audienceId })"
             class="card"
-            ng-repeat="audience in $ctrl.audiences">
+            ng-repeat="audience in $ctrl.audiences | filter:$ctrl.searchFilter">
             <div class="row row-flush collapse">
               <div class="column medium-4 large-8">
                 <div class="card-title">{{audience.title}}</div>

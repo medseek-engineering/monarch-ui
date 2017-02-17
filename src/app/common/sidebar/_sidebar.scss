@@ -23,7 +23,7 @@
     @extend %sidebar-menu-over;
     background: rgba(black, 0.1);
   }
-  a {
+  a:not(.button) {
     position: relative;
     color: $sg_dark_grey;
     padding-right: 3em;
