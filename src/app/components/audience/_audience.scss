@@ -2,45 +2,75 @@
   height: calc(100vh - 141px);
   min-height: 0;
   > monarch-sidebar {
-    width: 400px;
     overflow-y: auto;
   }
   > monarch-page {
-    width: calc(100% - 400px);
     position: relative;
   }
 }
 
-.person-card-list {
+$audience-top-height: 9rem;
+
+.audience-top {
+  overflow: hidden;
+  height: $audience-top-height;
+  border-bottom: 1px solid $sg_light_grey_border;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+
+}
+
+.audience-filters {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.audience-stats {
+  border-left: 1px solid $sg_light_grey_border;
+  padding: 2rem;
+  text-align: center;
+  .stat-heading {
+    color: $sg_light_grey;
+  }
+}
+
+.audience-bottom {
   padding: 1rem;
   position: absolute;
-  top: 14em;
+  top: $audience-top-height;
   left: 0;
   right: 0;
   bottom: 0;
   overflow-y: auto;
 }
 
-.audience-top {
-  min-height: 14em;
-  border-bottom: 1px solid $sg_light_grey_border;
-  background-color: white;
-  position: relative;
+.audience-display-view {
+  position: absolute;
+  top: $audience-top-height + .5rem;
+  right: 0.5rem;
 }
 
-.map {
+.audience-map {
   background: url('predict-map.jpg') no-repeat;
   background-size: cover;
   top: 0;
   right: 0;
-  width: 400px;
+  left: 0;
   bottom: 0;
   position: absolute;
 }
 
-.audience-stats {
-  padding: 4rem 2rem;
-  max-width: calc(100% - 400px);
+
+.apply-a-filter {
+  font-weight: 300;
+  font-size: 2em;
+  color: $sg_light_grey;
+  padding: 0.75em;
 }
 
 
@@ -48,4 +78,70 @@
 .stat-heading {
   text-transform: uppercase;
   font-size: 1.25em;
+}
+
+.checkbox-value {
+  color: $sg_light_grey;
+}
+
+
+.checkbox-list {
+  > .checkbox {
+    display: flex;
+    width: 100%;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    > * {
+      display: block;
+    }
+    > .checkbox-wrapper {
+      flex-shrink: 1;
+      line-height: 1.25;
+      padding-right: 0.5em;
+    }
+    > .checkbox-label {
+      flex-grow: 1;
+      line-height: 1.25;
+    }
+    > .checkbox-value {
+      padding-left: 0.25em;
+      flex-shrink: 1;
+      line-height: 1.25;
+    }
+  }
+
+}
+
+
+.label {
+  color: $sg_dark_grey;
+  background-color: white;
+  padding: 0.5em;
+  border: 1px solid $sg_light_grey_border;
+  font-size: 1em;
+  &.with-close {
+    position: relative;
+    padding-right: 1.5em;
+    > .close {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      line-height: 0.5;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.brick-list {
+  padding: 0;
+  margin: 0;
+  > li {
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.filter-type {
+  font-weight: 600;
 }

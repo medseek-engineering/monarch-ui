@@ -1,5 +1,5 @@
 
-export const filterTypeData = {
+let filterTypes = {
   "AgeOfChildren": [
     {
       "_id": "A",
@@ -338,7 +338,7 @@ export const filterTypeData = {
     },
     {
       "_id": "P",
-      "Name": "P.o. Boxes"
+      "Name": "P.O. Boxes"
     },
     {
       "_id": "U",
@@ -2147,3 +2147,21 @@ export const filterTypeData = {
     }
   ]
 };
+
+
+function splitValueForEachType(type) {
+  return type.map((iFilter)=>Object.assign({}, iFilter, {
+    Enabled: false,
+    Quantity: Math.floor(5063/type.length) - Math.floor(Math.random()*type.length)
+  }));
+}
+
+
+for (var key in filterTypes) {
+  filterTypes[key] = splitValueForEachType(filterTypes[key]);
+}
+
+
+
+
+export const filterTypeData = filterTypes;

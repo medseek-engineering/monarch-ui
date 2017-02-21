@@ -28,7 +28,7 @@ export const AudienceModule = angular
       })
       .state('audience.detail', {
         title: 'Audience',
-        url: '/:audienceId?filterType',
+        url: '/:audienceId',
         component: 'audienceDetail'
       });
   })
