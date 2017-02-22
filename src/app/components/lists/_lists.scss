@@ -1,0 +1,32 @@
+
+
+.card-stat {
+  font-size: 1.5em;
+  line-height: 1.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 300;
+  @media (min-width: 1024px) {
+    padding-top: 0.5rem;
+  }
+}
+
+
+.card-stat-heading {
+  font-size: 0.8em;
+  padding-right: 1rem;
+  color: $sg_medium_grey;
+
+}
+
+.table-heading {
+  font-size: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+
+.dropdown.menu.dropdown-on-right > li.opens-right > .is-dropdown-submenu {
+  right: 0;
+  left: auto;
+}
