@@ -1,14 +1,20 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+
 import { ManageListsModule } from './manage-lists/manage-lists.module';
+import { CreateListModule } from './create-list/create-list.module';
 
 import { ListsComponent } from './lists.component';
+
+import { createListModes } from './create-list-modes.constant';
 
 export const ListsModule = angular
   .module('monarch.lists', [
     uiRouter,
-    ManageListsModule
+    ManageListsModule,
+    CreateListModule
   ])
+  .constant('createListModes', createListModes)
   .component('lists', ListsComponent)
   .config(($stateProvider) => {
     'ngInject';
@@ -23,6 +29,17 @@ export const ListsModule = angular
         title: 'Lists',
         url: '/?listId',
         component: 'manageLists'
+      })
+      .state('lists.createList', {
+        title: 'Create List',
+        url: '/create-list',
+        params: {
+          mode: 'newAudience'
+        },
+        breadcrumb: [
+          'lists'
+        ],
+        component: 'createList'
       });
   })
   .name;

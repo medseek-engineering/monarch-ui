@@ -4,6 +4,8 @@ import { FooterModule } from './footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { PageModule } from './page/page.module';
 import { TileModule } from './tile/tile.module';
+import { PageHeaderModule } from './page-header/page-header.module';
+import { FilterBarModule } from './filter-bar/filter-bar.module'
 
 export const CommonModule = angular
   .module('monarch.common', [
@@ -11,6 +13,8 @@ export const CommonModule = angular
     FooterModule,
     SidebarModule,
     PageModule,
-    TileModule
+    TileModule,
+    FilterBarModule,
+    PageHeaderModule
   ])
   .name;

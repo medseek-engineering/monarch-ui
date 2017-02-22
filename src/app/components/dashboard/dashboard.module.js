@@ -14,7 +14,8 @@ export const DashboardModule = angular
       .state('dashboard', {
         title: 'Dashboard',
         url: '/dashboard',
-        component: 'dashboard'
+        component: 'dashboard',
+        hidePageHeader: true
       });
   })
   .name;

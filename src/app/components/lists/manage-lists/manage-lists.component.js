@@ -1,10 +1,5 @@
 export const ManageListsComponent = {
   template: `
-    <div class="row row-flush page-header">
-      <div class="column">
-        <h2>Lists</h2>
-      </div>
-    </div>
     <div
       class="wrapper">
       <monarch-page>
@@ -42,12 +37,9 @@ export const ManageListsComponent = {
             <div class="column large-2 clearfix">
               <ul class="dropdown menu float-right dropdown-on-right" dropdown-menu>
                 <li>
-                  <a ui-sref="lists.manageLists({listId: 'ADD'})" class="button primary">Create List</a>
+                  <a tabindex="0" class="button primary">Create List</a>
                   <ul class="menu">
-                    <li><a href="">From New Audience</a></li>
-                    <li><a href="">From Existing Audience</a></li>
-                    <li><a href="">From Leads</a></li>
-                    <li><a href="">Import List</a></li>
+                    <li ng-repeat="mode in $ctrl.createListModes track by mode.name"><a ui-sref="{{mode.name}}">{{mode.title}}</a></li>
                   </ul>
                 </li>
               </ul>
@@ -95,9 +87,9 @@ export const ManageListsComponent = {
                     <ul class="menu">
                       <li><a href="#">Settings</a></li>
                       <li><a href="#">Import</a></li>
-                      <li><a href="#">Duplicate List</a></li>
+                      <li><a href="#">Duplicate</a></li>
                       <li><a href="#">Combine List</a></li>
-                      <li><a href="#">Export List</a></li>
+                      <li><a href="#">Export</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -131,10 +123,11 @@ export const ManageListsComponent = {
     </div>
   `,
   controller: class ManageListsComponent {
-    constructor(lists, $stateParams) {
+    constructor(lists, $stateParams, createListModes) {
       'ngInject';
       this.lists = lists;
       this.stateParams = $stateParams;
+      this.createListModes = createListModes;
     }
   }
 };

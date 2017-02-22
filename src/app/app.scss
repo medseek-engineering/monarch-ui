@@ -508,6 +508,17 @@ a.card {
   font-size: 1.25em;
 }
 
+.form-wrapper {
+  padding-top: 1rem;
+  max-width: 640px;
+}
+
+select {
+  width: inherit;
+}
+
+
+
 @import 'common/header/header';
 @import 'common/sidebar/sidebar';
 @import 'common/page/page';

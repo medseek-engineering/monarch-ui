@@ -29,7 +29,8 @@ export const AudienceModule = angular
       .state('audience.detail', {
         title: 'Audience',
         url: '/:audienceId',
-        component: 'audienceDetail'
+        component: 'audienceDetail',
+        hidePageHeader: true
       });
   })
   .name;

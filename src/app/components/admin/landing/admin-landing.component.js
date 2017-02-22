@@ -1,10 +1,5 @@
 export const AdminLandingComponent = {
   template: `
-    <div class="row row-flush page-header">
-      <div class="column">
-        <h2>Admin</h2>
-      </div>
-    </div>
     <div class="tiers">
       <tier
         tier="$ctrl.tiersMenu[0]"

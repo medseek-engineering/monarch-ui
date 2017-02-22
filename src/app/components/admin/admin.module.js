@@ -36,7 +36,8 @@ export const AdminModule = angular
       .state('admin.userManagement', {
         title: 'User Management',
         url: '/user-management?userId',
-        component: 'userManagement'
+        component: 'userManagement',
+        hidePageHeader: true
       });
   })
   .name;

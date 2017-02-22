@@ -5,8 +5,9 @@ export const AudienceDetailComponent = {
         <a ui-sref="audience.list">Audience</a>
         <h2>{{$ctrl.selectedAudience.title}}</h2>
       </div>
-      <div class="column medium-6">
-        <ul class="menu page-actions" style="padding-top: 1rem">
+      <div class="column medium-6 clearfix">
+
+        <ul class="menu float-right" style="padding-top: 1.5rem">
           <li>
             <a href="" class="button primary">Create List from Audience</a>
           </li>

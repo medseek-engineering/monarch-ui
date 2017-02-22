@@ -5,7 +5,6 @@ export const CRMComponent = {
     }
   },
   template: `
-    <crm-header></crm-header>
     <div ui-view></div>
   `
 };
