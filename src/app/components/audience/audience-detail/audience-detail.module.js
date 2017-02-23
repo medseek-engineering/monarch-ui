@@ -1,13 +1,13 @@
 import angular from 'angular';
 import { AudienceDetailComponent } from './audience-detail.component';
-import { filterTypeData } from './audience-filters.constant';
+import { AudienceBuilderModule } from './audience-builder/audience-builder.module';
+import { CreateAudienceModule } from './create-audience/create-audience.module';
 
-import { filterTypes } from './audience-filter-types.constant';
 
 export const AudienceDetailModule = angular
   .module('monarch.audience.detail', [
+    AudienceBuilderModule,
+    CreateAudienceModule
   ])
-  .constant('filterTypeData', filterTypeData)
-  .constant('filterTypes', filterTypes)
   .component('audienceDetail', AudienceDetailComponent)
   .name;

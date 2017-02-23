@@ -3,6 +3,8 @@ import uiRouter from 'angular-ui-router';
 
 import { ManageListsModule } from './manage-lists/manage-lists.module';
 import { CreateListModule } from './create-list/create-list.module';
+import { ListDetailModule } from './list-detail/list-detail.module';
+
 
 import { ListsComponent } from './lists.component';
 
@@ -12,7 +14,8 @@ export const ListsModule = angular
   .module('monarch.lists', [
     uiRouter,
     ManageListsModule,
-    CreateListModule
+    CreateListModule,
+    ListDetailModule
   ])
   .constant('createListModes', createListModes)
   .component('lists', ListsComponent)
@@ -27,18 +30,25 @@ export const ListsModule = angular
       })
       .state('lists.manageLists', {
         title: 'Lists',
-        url: '/?listId',
+        url: '/',
         component: 'manageLists'
+      })
+      .state('lists.listDetail', {
+        title: 'List',
+        url: '/:listId',
+        component: 'listDetail',
+        breadcrumb: [
+          'lists'
+        ]
       })
       .state('lists.createList', {
         title: 'Create List',
         url: '/create-list',
         params: {
-          mode: 'newAudience'
+          mode: 'audience',
+          audienceId: null
         },
-        breadcrumb: [
-          'lists'
-        ],
+        redirectTo: 'lists.createList.form',
         component: 'createList'
       });
   })

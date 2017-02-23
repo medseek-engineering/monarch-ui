@@ -91,9 +91,8 @@ for (i = 0; i < 50; i++) {
     persons: persons
   };
   audienceRandoms = audienceRandoms.concat([Object.assign({}, audience, {
-    audienceId: audience.audienceId + i
+    audienceId: audience.audienceId - i
   })]);
-  i = i + 1;
 }
 
 

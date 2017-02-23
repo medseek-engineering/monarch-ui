@@ -19,8 +19,8 @@ export const HeaderComponent = {
           <li>
             <a class="multi-line-menu-link" tabindex="0"><small>Healthcare Marketing<br>Peachtree Hospital</small></a>
             <ul id="client-dropdown-menu" class="menu">
-              <li><form class="search-client-form"><input type="search" placeholder="Search for Client"></form></li>
-              <li class="client-list">
+              <li class="menu-search"><form class="search-client-form"><input type="search" placeholder="Search for Client"></form></li>
+              <li class="menu-search-results client-list">
                 <div class="tier">
                   <ul class="menu vertical">
                     <li>

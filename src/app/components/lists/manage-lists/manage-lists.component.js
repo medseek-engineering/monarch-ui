@@ -52,7 +52,7 @@ export const ManageListsComponent = {
             ng-repeat="list in $ctrl.lists | filter:$ctrl.searchFilter">
             <div class="row row-flush collapse">
               <div class="column medium-4 large-3">
-                <div class="card-title"><a ui-sref="lists.manageLists({listId: list.listId})">{{list.title}}</a></div>
+                <div class="card-title"><a ui-sref="lists.listDetail({listId: list.listId})">{{list.title}}</a></div>
                 Created {{list.created}} by {{list.createdBy}}
                 
               </div>
@@ -108,18 +108,6 @@ export const ManageListsComponent = {
         </div>
         
       </monarch-page>
-      <monarch-side-panel
-        class="side-panel"
-        ng-if="$ctrl.stateParams.listId">
-        <button
-          class="close-button"
-          aria-label="Close menu"
-          type="button"
-          ui-sref="lists.manageLists({listId: null})">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-      </monarch-side-panel>
     </div>
   `,
   controller: class ManageListsComponent {

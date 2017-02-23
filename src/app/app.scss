@@ -340,6 +340,10 @@ table tbody tr:first-child {
   display: block;
 }
 
+.card-radio {
+  margin: 0;
+}
+
 .menu-2-across {
   &::after {
     content: ' ';
@@ -351,6 +355,27 @@ table tbody tr:first-child {
 
 .no-page-heading {
   padding-top: 1rem;
+}
+
+.menu-search {
+  padding: 0.5em;
+}
+
+.menu-search-results {
+  overflow-y: auto;
+  max-height: 12.75rem;
+  border-top: 1px solid $sg_light_grey_border;
+  min-width: 20rem;
+  > .menu {
+    > li > a {
+      border-top: 1px solid $sg_light_grey_border;
+      color: $sg_secondary;
+      &:hover, &:focus {
+        background-color: $sg_primary;
+        color: white;
+      }
+    }
+  }
 }
 
 // Forms
@@ -508,8 +533,18 @@ a.card {
   font-size: 1.25em;
 }
 
+.stat.small {
+  color: $sg_medium_grey;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-top: 0.8em;
+  padding-left: 1em;
+  font-size: 1em;
+  vertical-align: top;
+}
+
 .form-wrapper {
-  padding-top: 1rem;
   max-width: 640px;
 }
 
@@ -517,12 +552,25 @@ select {
   width: inherit;
 }
 
+.select-search{
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+}
+
+.select-link {
+  margin-bottom: 2rem;
+}
+
+
+
 
 
 @import 'common/header/header';
 @import 'common/sidebar/sidebar';
 @import 'common/page/page';
 @import 'common/tile/tile';
+@import 'common/page-header/breadcrumb/breadcrumb';
 @import 'components/dashboard/dashboard';
 @import 'components/audience/audience';
 @import 'components/campaigns/campaigns';
