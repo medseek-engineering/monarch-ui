@@ -562,7 +562,39 @@ select {
 }
 
 
+.full-screen-header {
+  background-color: white;
+  border-bottom: 1px solid $sg_light_grey_border;
+  min-height: 46px;
+  padding: 0.4rem 1rem;
+  padding-left: calc(0.75rem + 46px);
+  position: relative;
+}
 
+.full-screen-heading {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0.3rem;
+}
+
+.full-screen-small-text {
+  margin-left: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.full-screen-logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  background: $sg_teal_primary url('./ih-butterfly.svg') center center no-repeat;
+  background-size: 70%;
+
+}
 
 
 @import 'common/header/header';
