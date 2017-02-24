@@ -25,7 +25,9 @@ export const CreateListModule = angular
       .state('lists.createList.audience', {
         title: 'Create Audience',
         url: '/create-audience',
+        hideHeader: true,
         hidePageHeader: true,
+        hideFooter: true,
         template: `
           <create-audience
             audience="$ctrl.list.audience"

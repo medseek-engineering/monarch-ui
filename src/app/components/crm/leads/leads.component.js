@@ -109,25 +109,12 @@ export const LeadsComponent = {
         <crm-sidebar></crm-sidebar>
       </monarch-sidebar>
       <monarch-page>
-        <div class="filter-bar">
-          <div class="filter-bar-left">
-            <ul class="dropdown menu" dropdown-menu>
-              <li>
-                <a href="" class="button">Filter</a>
-                <ul class="menu">
-                  <li><a href="">Create Filter</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="filter-bar-right">
-            <ul class="menu">
-              <li>
-                <a ui-sref="crm.leads({leadId: 'ADD'})" class="button primary">Add Lead</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <filter-bar
+          search-filter="$ctrl.searchFilter"
+          place-holder-text="Search Leads"
+          cta-button-text="Add Lead"
+          cta-button-sref="crm.leads({leadId: 'ADD'})">
+        </filter-bar>
         <ul class="accordion">
           <li class="accordion-item" ng-class="{'is-active': $ctrl.stateParams.today}">
             <a ui-sref="crm.leads({today: !$ctrl.stateParams.today})" class="accordion-title">Today</a>

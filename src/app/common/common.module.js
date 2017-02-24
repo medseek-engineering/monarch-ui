@@ -5,7 +5,9 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { PageModule } from './page/page.module';
 import { TileModule } from './tile/tile.module';
 import { PageHeaderModule } from './page-header/page-header.module';
-import { FilterBarModule } from './filter-bar/filter-bar.module'
+import { FilterBarModule } from './filter-bar/filter-bar.module';
+import { DateFilterModule } from './date-filter/date-filter.module';
+
 
 export const CommonModule = angular
   .module('monarch.common', [
@@ -15,6 +17,7 @@ export const CommonModule = angular
     PageModule,
     TileModule,
     FilterBarModule,
-    PageHeaderModule
+    PageHeaderModule,
+    DateFilterModule
   ])
   .name;

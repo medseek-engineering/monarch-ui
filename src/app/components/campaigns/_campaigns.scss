@@ -1,0 +1,77 @@
+
+%dot {
+  content: '';
+  min-width: 0.8em;
+  min-height: 0.8em;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.status {
+  display: inline-block;
+  position: relative;
+  min-height: 1em;
+  min-width: 1em;
+  vertical-align: top;
+  margin-top: 0.25em;
+  margin-right: 1em;
+  .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .icon-pause {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  .icon-draft {
+    transform: translate(-50%, -50%) scale(2);
+  }
+  &.status-active {
+    &::before {
+      background-color: $sg_teal_primary;
+      @extend %dot;
+    }
+  }
+  &.status-paused {
+    color: $sg_light_grey;
+
+    
+  }
+  &.status-deleted {
+    &::before {
+      background-color: $sg_rosy_red;
+      @extend %dot;
+    }
+  }
+  &.status-draft {
+    color: $sg_light_grey;
+  }
+}
+
+.block {
+  display: inline-block;
+  width: calc(100% - 3em);
+}
+
+.menu-heading {
+  font-weight: 400;
+  color: $sg_medium_grey;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.wide-dropdown {
+  min-width: 300px;
+  padding-bottom: 0.5em;
+}
+
+// 'Draft',
+//   103    'Active',
+//   104:   'Paused',
+//   105    'Deleted'

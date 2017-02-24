@@ -4,7 +4,7 @@ export const DashboardComponent = {
   template: `
       <div class="row row-flush small-up-1 medium-up-2 page-header">
         <div class="column shrink">
-          <ul class="dropdown menu dropdown-large" dropdown-menu>
+          <ul class="dropdown menu dropdown-large dropdown-on-right" dropdown-menu>
             <li>
               <a tabindex="0"><h2>General Practice</h2></a>
               <ul class="menu">
@@ -28,28 +28,7 @@ export const DashboardComponent = {
           </ul>
         </div>
         <div class="column shrink">
-          <ul class="page-actions dropdown menu dropdown-large" dropdown-menu>
-            <li>
-              <a class="button secondary" tabindex="0">{{$ctrl.currentDate | date}}</a>
-              <ul class="menu">
-                <li>
-                  <a>Select Date</a>
-                </li>
-                <li>
-                  <a>Most Recent</a>
-                </li>
-                <li>
-                  <a>Previous Day</a>
-                </li>
-                <li>
-                  <a>28 days ago</a>
-                </li>
-                <li>
-                  <a>Custom</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <date-filter></date-filter>
         </div>
       </div>
       <div class="row row-flush">
@@ -213,7 +192,6 @@ export const DashboardComponent = {
   controller: class DashboardComponent {
     constructor() {
       'ngInject';
-      this.currentDate = new Date();
       this.statTiles = [
         {
           className: 'tile-total-spend',

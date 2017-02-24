@@ -5,8 +5,12 @@ export const CreateAudienceComponent = {
     onSave: '='
   },
   template: `
+
     <div class="row row-flush page-header">
-      <div class="column medium-6">
+      <div class="columns medium-2">
+        <small>Healthcare Marketing<br>Peachtree Hospital</small>
+      </div>
+      <div class="column medium-4">
         <h2>Create Audience</h2>
       </div>
       <div class="column medium-6 clearfix">

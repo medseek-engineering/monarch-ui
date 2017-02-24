@@ -24,7 +24,7 @@ export const FilterBarComponent = {
         </ul>
       </div>
       <div class="filter-bar-right">
-        <ul class="menu">
+        <ul class="menu" ng-if="$ctrl.ctaButtonText">
           <li>
             <a
               ui-sref="{{$ctrl.ctaButtonSref}}"

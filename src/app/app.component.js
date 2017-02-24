@@ -1,11 +1,13 @@
 export const AppComponent = {
   template: `
-    <monarch-header></monarch-header>
-    <div class="monarch-site-body">
+    <monarch-header
+      ng-if="!$ctrl.$state.current.hideHeader"></monarch-header>
+    <div ng-class="{'monarch-site-body':!$ctrl.$state.current.hideHeader }">
       <page-header current-state="$ctrl.$state.current"></page-header>
       <div ui-view></div>
     </div>
-    <monarch-footer></monarch-footer>
+    <monarch-footer
+      ng-if="!$ctrl.$state.current.hideFooter"></monarch-footer>
   `,
   controller: class AppComponent {
     constructor($transitions, $state, $window) {

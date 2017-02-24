@@ -46,14 +46,6 @@ export const CreateListFormComponent = {
                 for="list-audience">Audience</label>
             </div>
             <div class="columns large-8">
-              <div class="row collapse">
-                <div class="columns large-8">
-                  
-                </div>
-                <div class="columns large-4">
-                  
-                </div>
-              </div>
 
               <select-audience
                     selected-audience="$ctrl.list.audience"></select-audience>
@@ -66,6 +58,19 @@ export const CreateListFormComponent = {
                   ui-sref="lists.createList.audience">Create New Audience&hellip;</a>
               </div>
               
+            </div>
+          </div>
+          <div
+            class="row"
+            ng-if="$ctrl.list.source.mode === 'importList'">
+            <div class="columns large-4">
+              <label
+                class="middle text-right"
+                for="list-file-upload">File</label>
+            </div>
+            <div class="columns large-8">
+              <label for="list-file-upload" class="button">Upload File</label>
+              <input type="file" id="list-file-upload" class="show-for-sr">
             </div>
           </div>
           <div class="row">
