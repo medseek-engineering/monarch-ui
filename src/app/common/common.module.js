@@ -7,6 +7,7 @@ import { TileModule } from './tile/tile.module';
 import { PageHeaderModule } from './page-header/page-header.module';
 import { FilterBarModule } from './filter-bar/filter-bar.module';
 import { DateFilterModule } from './date-filter/date-filter.module';
+import { FormsModule } from './forms/forms.module';
 
 
 export const CommonModule = angular
@@ -18,6 +19,7 @@ export const CommonModule = angular
     TileModule,
     FilterBarModule,
     PageHeaderModule,
-    DateFilterModule
+    DateFilterModule,
+    FormsModule
   ])
   .name;

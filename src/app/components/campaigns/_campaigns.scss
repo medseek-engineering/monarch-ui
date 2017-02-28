@@ -71,6 +71,37 @@
   padding-bottom: 0.5em;
 }
 
+.button-right {
+  float: right;
+  margin-bottom: 0;
+}
+
+.campaign-audience-sources {
+  padding-top: 0.5em;
+}
+
+.radio-list {
+  margin-bottom: 1em;
+}
+
+
+.upload-image {
+  display: block;
+  background-color: $sg_light_grey_background;
+  border: 1px solid $sg_light_grey_border;
+  width: 100%;
+  padding-bottom: 52.36%;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.upload-image-heading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // 'Draft',
 //   103    'Active',
 //   104:   'Paused',

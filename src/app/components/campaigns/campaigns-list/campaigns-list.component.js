@@ -25,7 +25,7 @@ export const CampaignsListComponent = {
                     <div><h5 class="menu-heading">{{cat.title}}</h5></div>
                     <ul class="menu vertical">
                       <li ng-repeat="type in cat.types track by type.title">
-                        <a href="">{{type.title}}</a>
+                        <a href="" ui-sref="campaigns.create({channel: type.title })">{{type.title}}</a>
                       </li>
                     </ul>
                   </div>

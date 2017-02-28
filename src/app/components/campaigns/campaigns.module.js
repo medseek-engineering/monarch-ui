@@ -3,11 +3,13 @@ import uiRouter from 'angular-ui-router';
 import { CampaignsComponent } from './campaigns.component';
 
 import { CampaignsListModule } from './campaigns-list/campaigns-list.module';
+import { CreateCampaignModule } from './create-campaign/create-campaign.module';
 
 export const CampaignsModule = angular
   .module('monarch.campaigns', [
     uiRouter,
-    CampaignsListModule
+    CampaignsListModule,
+    CreateCampaignModule
   ])
   .component('campaigns', CampaignsComponent)
   .config(($stateProvider) => {
@@ -27,11 +29,6 @@ export const CampaignsModule = angular
         params: {
           channel: 'all'
         }
-      })
-      .state('campaigns.create', {
-        title: 'Campaigns',
-        url: '/create',
-        component: 'campaignsList'
       });
   })
   .name;

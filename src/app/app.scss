@@ -37,6 +37,10 @@ h5 {
   font-weight: 600;
 }
 
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: $sg_light_grey;
+}
+
 %basic-link {
   color: $sg_secondary;
   &:hover, &:focus {
@@ -559,6 +563,15 @@ select {
 
 .select-link {
   margin-bottom: 2rem;
+}
+
+.inline-form-field {
+  width: auto;
+  display: inline-block;
+}
+
+.budget-field {
+  width: 5em;
 }
 
 
