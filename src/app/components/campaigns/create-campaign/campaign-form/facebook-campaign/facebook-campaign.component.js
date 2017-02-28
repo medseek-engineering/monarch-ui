@@ -3,16 +3,14 @@ export const FacebookCampaignComponent = {
     campaign: '='
   },
   template: `
-    
-    <campaign-budget
-      campaign="$ctrl.campaign"></campaign-budget>
     <campaign-audience
       campaign="$ctrl.campaign"></campaign-audience>
+    <campaign-budget
+      campaign="$ctrl.campaign"></campaign-budget>
     <campaign-content
       campaign="$ctrl.campaign"></campaign-content>
     <campaign-objective
       campaign="$ctrl.campaign"></campaign-objective>
-    
   `,
   controller: class FacebookCampaignComponent {
     constructor(campaignObjectives) {
@@ -28,8 +26,6 @@ export const FacebookCampaignComponent = {
           audienceSource: 'list'
         }
       );
-
-      console.log(this.campaign.objective);
     }
   }
 };
