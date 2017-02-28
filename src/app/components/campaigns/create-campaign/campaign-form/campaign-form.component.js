@@ -57,6 +57,15 @@ export const CampaignFormComponent = {
         </form>
       
       </monarch-page>
+      <monarch-side-panel class="side-panel">
+
+        <p class="stat-heading">Estimated Audience</p>
+        <div class="stat">{{'5063' | number}}</div>
+        <br><br>
+        <p class="stat-heading">Total Cost</p>
+        <div class="stat">$7.00</div>
+
+      </monarch-side-panel>
     </div>
   `,
   controller: class CampaignFormComponent {
